@@ -2776,6 +2776,13 @@ body.large-text .tm-chip { font-size: 14px; }
 .kofi-btn:hover { filter: brightness(0.95); }
 .kofi-cup { width: 18px; height: 18px; }
 
+.brand-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
 .brand-logo {
   width: 52px;
   height: 52px;
@@ -2798,6 +2805,54 @@ body.large-text .tm-chip { font-size: 14px; }
   margin: 24px auto 0;
   min-height: 90px;
 }
+
+/* ═══════════════════════════════════════════════
+   SEO CONTENT (per-page crawlable text)
+   ═══════════════════════════════════════════════ */
+.tool-seo {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 48px 24px 80px;
+  color: var(--text, #323842);
+  font-family: "Inter", sans-serif;
+  line-height: 1.6;
+}
+.tool-seo h1 {
+  font-size: 30px;
+  margin: 0 0 16px;
+}
+.tool-seo h2 {
+  font-size: 21px;
+  margin: 28px 0 10px;
+}
+.tool-seo p { margin: 0 0 14px; }
+.tool-seo ul,
+.tool-seo ol { margin: 0 0 14px; padding-left: 22px; }
+.tool-seo li { margin: 4px 0; }
+.tool-seo a { color: #4a7ec8; }
+
+.seo-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin-top: 24px;
+}
+.seo-card {
+  display: block;
+  padding: 18px 20px;
+  border: 1px solid var(--header-rule, #e3e3e3);
+  border-radius: 12px;
+  text-decoration: none;
+  color: inherit;
+  background: var(--card-bg, #fff);
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
+}
+.seo-card:hover {
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+.seo-card h2 { margin: 0 0 8px; font-size: 18px; }
+.seo-card p { margin: 0; font-size: 14px; opacity: 0.85; }
 
 .lang-wrap { position: relative; display: inline-flex; }
 .globe-icon { width: 22px; height: 22px; }

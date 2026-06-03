@@ -170,6 +170,9 @@ makeSearch(
   const dropdownEl = document.getElementById('welcomeSearchDropdown');
   const section = document.getElementById('welcomeSearchSection');
 
+  /* Welcome search only exists on the home page — bail out elsewhere. */
+  if (!inputEl || !dropdownEl || !section) return;
+
   function activate() { section.classList.add('search-active'); }
   function deactivate() {
     if (!inputEl.value.trim()) section.classList.remove('search-active');
