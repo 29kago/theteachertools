@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="light">
 
 <head>
   <meta charset="UTF-8">
@@ -16,274 +16,865 @@
   <link rel="icon" href="Logo.png">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6623585309429140"
     crossorigin="anonymous"></script>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Fredoka:wght@600;700&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
-    rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/dseg@0.46.0/css/dseg.css">
-  <link rel="stylesheet" href="css/style.css">
-  <link id="gfont-Poppins" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;display=swap">
-  <link id="gfont-Architects-Daughter" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Architects+Daughter:wght@300;400;500;600;700&amp;display=swap">
-  <link id="gfont-Permanent-Marker" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Permanent+Marker:wght@300;400;500;600;700&amp;display=swap">
-  <link id="gfont-Montserrat" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&amp;display=swap">
-  <link id="gfont-Playfair-Display" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500;600;700&amp;display=swap">
-  <link id="gfont-Inter" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap">
-  <link id="gfont-Oswald" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&amp;display=swap">
-  <link id="gfont-Comfortaa" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&amp;display=swap">
-  <link id="gfont-Merriweather" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;500;600;700&amp;display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,700;9..144,900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "error-container": "#ffdad6",
+            "surface-bright": "#fdf9ef",
+            "surface-container-highest": "#e6e2d8",
+            "outline": "#707783",
+            "paper-shadow": "#E6DFD1",
+            "primary-container": "#0077ce",
+            "secondary-fixed-dim": "#fabd00",
+            "on-surface": "#1c1c16",
+            "surface-container-low": "#f7f3e9",
+            "surface-dim": "#dddad0",
+            "surface-container": "#f1eee4",
+            "on-secondary-fixed": "#261a00",
+            "primary-fixed": "#d3e4ff",
+            "surface": "#fdf9ef",
+            "manila-accent": "#D9C5A3",
+            "secondary-container": "#fdc003",
+            "inverse-surface": "#31312a",
+            "surface-variant": "#e6e2d8",
+            "secondary-fixed": "#ffdf9e",
+            "error": "#ba1a1a",
+            "on-secondary": "#ffffff",
+            "outline-variant": "#c0c7d4",
+            "on-primary": "#ffffff",
+            "primary-fixed-dim": "#a2c9ff",
+            "secondary": "#785900",
+            "tertiary": "#695a3e",
+            "ink": "#212121",
+            "on-secondary-container": "#6c5000",
+            "on-primary-container": "#fdfcff",
+            "background": "#fdf9ef",
+            "primary": "#005ea4",
+            "on-background": "#1c1c16",
+            "on-surface-variant": "#404752",
+            "surface-container-high": "#ece8de"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          "spacing": {
+            "margin-mobile": "16px",
+            "base": "8px",
+            "margin-desktop": "64px",
+            "gutter": "24px"
+          },
+          "fontFamily": {
+            "display-lg": ["Fraunces", "serif"],
+            "headline-lg": ["Outfit", "sans-serif"],
+            "headline-md": ["Outfit", "sans-serif"],
+            "label-sm": ["Inter"],
+            "body-lg": ["Inter"],
+            "body-md": ["Inter"],
+            "label-md": ["Inter"]
+          },
+          "fontSize": {
+            "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "900"}],
+            "headline-lg": ["44px", {"lineHeight": "1.2", "fontWeight": "700"}],
+            "headline-md": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
+            "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.03em", "fontWeight": "500"}],
+            "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+            "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+            "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}]
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Folder tabs — same SVG shape, tape and manila colors as the tool pages */
+    .ftab {
+      position: relative;
+      flex: 1;
+      min-width: 150px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 12px;
+      cursor: pointer;
+      user-select: none;
+      -webkit-user-select: none;
+      z-index: 1;
+      outline: none;
+    }
+
+    .ftab-shape {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+      overflow: visible;
+    }
+
+    .ftab-fill {
+      fill: #e2ddd0;
+      filter: drop-shadow(0 -2px 5px rgba(120, 90, 40, 0.14));
+      transition: fill 140ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .ftab:hover:not(.active) .ftab-fill { fill: #ded3bb; }
+    .ftab:focus-visible .ftab-fill { filter: drop-shadow(0 0 4px #005ea4); }
+    .ftab.active { z-index: 5; }
+    .ftab.active .ftab-fill { fill: #d9c5a3; }
+
+    .ftab-tape {
+      position: absolute;
+      left: 50%;
+      top: 47%;
+      transform: translate(-50%, -50%) rotate(-0.4deg);
+      width: 76%;
+      max-width: 200px;
+      height: 34px;
+      background: rgba(238, 218, 148, 0.42);
+      border-top: 0.75px solid rgba(210, 185, 110, 0.25);
+      border-bottom: 0.75px solid rgba(210, 185, 110, 0.25);
+      box-shadow:
+        inset 0 2px 3px rgba(255, 250, 200, 0.40),
+        0 1px 2px rgba(0, 0, 0, 0.04);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .ftab-label {
+      position: relative;
+      z-index: 1;
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+      color: #404752;
+      white-space: nowrap;
+      pointer-events: none;
+    }
+
+    .ftab.active .ftab-label { color: #1c1c16; }
+
+    /* Ko-fi CTA — heart turns red on hover */
+    .kofi-cta .material-symbols-outlined {
+      transition: color 200ms ease, transform 200ms ease;
+    }
+    .kofi-cta:hover .material-symbols-outlined {
+      color: #e53935;
+      font-variation-settings: 'FILL' 1;
+      transform: scale(1.15);
+    }
+
+    .manila-stack-effect {
+      position: relative;
+    }
+
+    .manila-stack-effect::after {
+      content: '';
+      position: absolute;
+      top: 4px;
+      right: -6px;
+      bottom: -6px;
+      left: 4px;
+      background: #D9C5A3;
+      border: 1px solid #c0c7d4;
+      border-radius: 4px;
+      z-index: -1;
+      opacity: 0.5;
+    }
+
+    .animate-fade-in {
+      animation: fadeIn 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+    #tab-content { transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1); }
+
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+  </style>
 </head>
 
-<body>
-
-  <template id="__bundler_thumbnail">
-    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-      <rect width="100" height="100" rx="20" fill="#DFD5C0"/>
-      <rect x="30" y="34" width="20" height="34" rx="3" fill="#E8956D"/>
-      <rect x="50" y="30" width="20" height="38" rx="3" fill="#4A7EC8"/>
-      <rect x="38" y="26" width="14" height="6" rx="2" fill="#C9A97C"/>
-    </svg>
-  </template>
+<body class="bg-background text-on-background min-h-screen font-body-md overflow-x-hidden">
 
   <!-- ═══════════════════════════ HEADER ═══════════════════════════ -->
-  <header class="header" style="font-family: &quot;Verdana&quot;">
-
-    <!-- Left: Brand -->
-    <div class="header-col header-left">
-      <a class="brand-link" href="./" aria-label="The Teacher Tools home">
-        <img src="Logo.png" alt="The Teacher Tools logo" class="brand-logo" />
-        <span class="brand-text">The Teacher Tools</span>
-      </a>
-    </div>
-
-    <!-- Center: Search -->
-    <div class="header-col header-center">
-      <div class="search-bar" id="searchBar">
-        <div class="search-icon-wrap">
-          <svg class="search-icon" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="9.5" cy="9.5" r="6.5" stroke="#999999" stroke-width="2.2" />
-            <path d="M14.5 14.5L19.5 19.5" stroke="#999999" stroke-width="2.2" stroke-linecap="round" />
-          </svg>
-        </div>
-        <input type="text" class="search-input" id="searchInput" placeholder="Search" autocomplete="off"
-          spellcheck="false">
-        <div class="search-dropdown" id="searchDropdown" aria-live="polite"></div>
-      </div>
-    </div>
-
-    <!-- Right: Support + Language + Settings + Avatar -->
-    <div class="header-col header-right">
-      <a class="kofi-btn" href="https://ko-fi.com/kago1" target="_blank" rel="noopener" title="Support Education">
-        <img src="https://storage.ko-fi.com/cdn/cup-border.png" alt="" class="kofi-cup" />
-        <span>Support Education</span>
+  <header class="fixed top-0 inset-x-0 z-50 bg-background/95 backdrop-blur border-b border-outline-variant">
+    <div class="max-w-[1280px] mx-auto flex justify-between items-center gap-4 px-margin-mobile md:px-margin-desktop py-4">
+      <a href="./" class="flex items-center gap-3 shrink-0" aria-label="The Teacher Tools home">
+        <img src="Logo.png" alt="The Teacher Tools logo" class="w-10 h-10 object-contain rounded-lg">
+        <span class="font-display-lg text-[26px] font-black text-ink tracking-tight italic whitespace-nowrap">The Teacher Tools</span>
       </a>
 
-      <div class="lang-wrap" id="langWrap">
-        <button class="hdr-btn" id="langBtn" title="Language" aria-label="Language" aria-haspopup="true" aria-expanded="false">
-          <svg class="globe-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="12" cy="12" r="9" stroke="#BBBBBB" stroke-width="2" />
-            <path d="M3 12h18M12 3c2.5 2.5 2.5 15.5 0 18M12 3c-2.5 2.5-2.5 15.5 0 18M4.5 7.5c4.5 2.5 10.5 2.5 15 0M4.5 16.5c4.5-2.5 10.5-2.5 15 0" stroke="#BBBBBB" stroke-width="1.6" stroke-linecap="round" />
-          </svg>
-        </button>
-        <div class="lang-menu" id="langMenu" role="menu" aria-label="Language">
-          <button class="lang-item" data-lang="en" role="menuitemradio">English</button>
-          <button class="lang-item" data-lang="es" role="menuitemradio">Spanish</button>
-          <button class="lang-item" data-lang="tr" role="menuitemradio">Turkish</button>
-        </div>
+      <div class="hidden md:flex flex-1 max-w-md mx-4 relative items-center">
+        <span class="material-symbols-outlined absolute left-3 text-on-surface-variant text-[20px] pointer-events-none">search</span>
+        <input id="homeSearchInput" class="w-full bg-surface-container-low border border-outline-variant rounded-full py-2.5 pl-10 pr-4 font-body-md focus:outline-none focus:border-primary transition-colors"
+          placeholder="Search for tools..." type="text" autocomplete="off" spellcheck="false">
+        <div id="homeSearchDropdown" class="hidden absolute top-full left-0 right-0 mt-2 bg-white border border-outline-variant rounded-xl shadow-xl overflow-hidden z-50"></div>
       </div>
 
-      <button class="hdr-btn" id="settingsBtn" title="Settings" aria-label="Settings">
-        <svg class="gear-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="12" cy="12" r="3" stroke="#BBBBBB" stroke-width="2" />
-          <path
-            d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"
-            stroke="#BBBBBB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-        </svg>
-      </button>
-
-      <button class="hdr-btn avatar-btn" id="avatarBtn" title="My Account" aria-label="Account">
-        <svg class="avatar-icon" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="20" cy="20" r="20" fill="#4E4E4E" />
-          <circle cx="20" cy="15.5" r="7.5" fill="#D2D2D2" />
-          <path d="M2 40 Q2 26.5 20 26.5 Q38 26.5 38 40Z" fill="#D2D2D2" />
-        </svg>
-      </button>
+      <div class="flex items-center gap-5 shrink-0">
+        <nav class="hidden lg:flex items-center gap-6 mr-1">
+          <a class="text-on-surface-variant font-label-md hover:text-primary transition-colors" href="#tools">Tools</a>
+          <a class="text-on-surface-variant font-label-md hover:text-primary transition-colors" href="#support">Support</a>
+        </nav>
+        <a class="hidden sm:inline-flex items-center gap-2 bg-secondary-container text-on-secondary-fixed px-4 py-2 rounded-lg font-label-md font-bold hover:brightness-95 transition-all"
+          href="https://ko-fi.com/kago1" target="_blank" rel="noopener" title="Support Education">
+          <img src="https://storage.ko-fi.com/cdn/cup-border.png" alt="" class="w-[18px] h-[18px]">
+          <span class="hidden xl:inline">Support Education</span>
+        </a>
+        <button id="savedClassesBtn" class="bg-primary text-on-primary px-5 py-2 rounded-lg font-label-md font-bold hover:scale-95 transition-transform whitespace-nowrap">Saved Classes</button>
+      </div>
     </div>
-
   </header>
 
-  <!-- ═══════════════════════════ TAB BAR ═══════════════════════════ -->
-  <div class="tabbar-wrap">
-    <div class="tabbar" id="tabBar" role="tablist" aria-label="Tools">
+  <!-- ═══════════════════════════ MAIN ═══════════════════════════ -->
+  <main class="pt-28 pb-16 px-margin-mobile md:px-margin-desktop max-w-[1280px] mx-auto">
 
-      <a class="tab active" data-panel="home" href="./" role="tab" aria-selected="true">
-        <svg class="tab-shape" viewBox="0 0 820 160" preserveAspectRatio="none" aria-hidden="true" focusable="false">
-          <path class="tab-fill" d="M 0 160 L 0 130 L 40 130 L 85 26 Q 97 0, 135 0 L 685 0 Q 723 0, 735 26 L 780 130 L 820 130 L 820 160 Z"/>
+    <!-- Hero -->
+    <section class="relative py-16 md:py-20 mb-20 overflow-hidden rounded-[2.5rem] bg-surface-container-low border border-outline-variant/30 flex flex-col md:flex-row items-center justify-between px-8 md:px-16 gap-12">
+      <div class="absolute top-0 right-0 w-1/3 h-full opacity-10 pointer-events-none">
+        <svg class="w-full h-full fill-primary" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+          <path d="M47.1,-63.1C59.9,-54.2,68.4,-39.7,73.1,-24.1C77.7,-8.4,78.5,8.4,72.9,23.3C67.3,38.2,55.4,51.2,41,59.3C26.6,67.4,9.6,70.5,-6,67C-21.7,63.5,-36,53.4,-47.5,41.4C-58.9,29.4,-67.5,15.6,-70.6,0.3C-73.7,-15.1,-71.4,-31.9,-61.9,-44C-52.4,-56.1,-35.8,-63.5,-20.3,-67.4C-4.9,-71.3,9.5,-71.8,24.1,-63.1C38.7,-54.5,47.1,-63.1,47.1,-63.1Z" transform="translate(100 100)"></path>
         </svg>
-        <span class="tape"></span>
-        <span class="tab-label">Home</span>
-      </a>
+      </div>
 
-      <a class="tab" data-panel="tool-a" href="student-picker/" role="tab" aria-selected="false">
-        <svg class="tab-shape" viewBox="0 0 820 160" preserveAspectRatio="none" aria-hidden="true" focusable="false">
-          <path class="tab-fill" d="M 0 160 L 0 130 L 40 130 L 85 26 Q 97 0, 135 0 L 685 0 Q 723 0, 735 26 L 780 130 L 820 130 L 820 160 Z"/>
-        </svg>
-        <span class="tape"></span>
-        <span class="tab-label">Student Picker</span>
-      </a>
-
-      <a class="tab" data-panel="tool-b" href="seating-arranger/" role="tab" aria-selected="false">
-        <svg class="tab-shape" viewBox="0 0 820 160" preserveAspectRatio="none" aria-hidden="true" focusable="false">
-          <path class="tab-fill" d="M 0 160 L 0 130 L 40 130 L 85 26 Q 97 0, 135 0 L 685 0 Q 723 0, 735 26 L 780 130 L 820 130 L 820 160 Z"/>
-        </svg>
-        <span class="tape"></span>
-        <span class="tab-label">Seating Arranger</span>
-      </a>
-
-      <a class="tab" data-panel="tool-c" href="behavior-chart/" role="tab" aria-selected="false">
-        <svg class="tab-shape" viewBox="0 0 820 160" preserveAspectRatio="none" aria-hidden="true" focusable="false">
-          <path class="tab-fill" d="M 0 160 L 0 130 L 40 130 L 85 26 Q 97 0, 135 0 L 685 0 Q 723 0, 735 26 L 780 130 L 820 130 L 820 160 Z"/>
-        </svg>
-        <span class="tape"></span>
-        <span class="tab-label">Behavior Chart</span>
-      </a>
-
-      <a class="tab" data-panel="tool-d" href="good-noodles/" role="tab" aria-selected="false">
-        <svg class="tab-shape" viewBox="0 0 820 160" preserveAspectRatio="none" aria-hidden="true" focusable="false">
-          <path class="tab-fill" d="M 0 160 L 0 130 L 40 130 L 85 26 Q 97 0, 135 0 L 685 0 Q 723 0, 735 26 L 780 130 L 820 130 L 820 160 Z"/>
-        </svg>
-        <span class="tape"></span>
-        <span class="tab-label">Good Noodles</span>
-      </a>
-
-      <a class="tab" data-panel="timer" href="timer/" role="tab" aria-selected="false">
-        <svg class="tab-shape" viewBox="0 0 820 160" preserveAspectRatio="none" aria-hidden="true" focusable="false">
-          <path class="tab-fill" d="M 0 160 L 0 130 L 40 130 L 85 26 Q 97 0, 135 0 L 685 0 Q 723 0, 735 26 L 780 130 L 820 130 L 820 160 Z"/>
-        </svg>
-        <span class="tape"></span>
-        <span class="tab-label">Timer</span>
-      </a>
-
-    </div>
-  </div>
-
-  <!-- ═══════════════════════════ MAIN CONTENT ═══════════════════════════ -->
-  <main class="content" id="mainContent">
-
-    <div class="panel active" id="panel-home" role="tabpanel">
-      <div class="welcome" style="font-family: &quot;Montserrat&quot;; font-size: 6px; font-weight: 500">
-        <div class="welcome-inner">
-          <div class="welcome-text">
-            <h1 class="welcome-title" style="margin: 0px; width: 780px">Welcome to The Teacher Tools</h1>
-            <p class="welcome-sub" style="font-weight: 100; font-size: 20px">Search for Tools or select one in the Tabs above.</p>
-          </div>
-          <div class="welcome-search-section" id="welcomeSearchSection">
-            <div class="search-bar" id="welcomeSearchBarEl">
-              <div class="search-icon-wrap">
-                <svg class="search-icon" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="9.5" cy="9.5" r="6.5" stroke="#999999" stroke-width="2.2" />
-                  <path d="M14.5 14.5L19.5 19.5" stroke="#999999" stroke-width="2.2" stroke-linecap="round" />
-                </svg>
-              </div>
-              <input type="text" class="search-input" id="welcomeSearchInput" placeholder="" autocomplete="off"
-                spellcheck="false" style="margin: 0px">
-              <div class="search-dropdown" id="welcomeSearchDropdown" aria-live="polite"></div>
-            </div>
-          </div>
-
-          <!-- Main Ad -->
-          <div class="home-ad">
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-client="ca-pub-6623585309429140"
-                 data-ad-slot="2577114334"
-                 data-ad-format="auto"
-                 data-full-width-responsive="true"></ins>
-            <script>
-              (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
-          </div>
+      <div class="flex-1 space-y-8 z-10">
+        <h1 class="font-display-lg text-[44px] md:text-display-lg font-black text-ink leading-[1]" style="letter-spacing:-0.04em">
+          Classroom Tools, <span class="text-primary italic">Perfected.</span>
+        </h1>
+        <p class="font-body-lg text-on-surface-variant max-w-lg leading-relaxed">
+          Free, projector-friendly tools designed for the modern teacher. No sign-ups, no frustration, just the tools you need to inspire.
+        </p>
+        <div class="flex flex-wrap gap-4 pt-4">
+          <a href="#tools" class="bg-secondary-container text-on-secondary-fixed px-10 py-4 rounded-xl font-bold text-lg hover:translate-y-[-2px] shadow-lg shadow-secondary-container/20 transition-all inline-block">Explore All Tools</a>
+          <button class="flex items-center gap-2 border border-outline-variant px-8 py-4 rounded-xl font-bold text-lg hover:bg-surface-container transition-all" id="play-tour-btn">
+            <span class="material-symbols-outlined text-[22px]">play_circle</span> Play Tour
+          </button>
         </div>
       </div>
+
+      <div class="flex-1 relative z-10 hidden md:block">
+        <div class="manila-stack-effect bg-white p-8 rounded-2xl border border-outline-variant shadow-sm rotate-2">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-3 h-3 rounded-full bg-error"></div>
+            <div class="w-3 h-3 rounded-full bg-secondary-fixed-dim"></div>
+            <div class="w-3 h-3 rounded-full bg-primary-container"></div>
+          </div>
+          <div class="space-y-6">
+            <div class="h-5 bg-surface-container w-3/4 rounded-full"></div>
+            <div class="h-5 bg-surface-container w-1/2 rounded-full"></div>
+            <div class="h-32 bg-manila-accent/30 border-2 border-dashed border-manila-accent rounded-xl flex items-center justify-center">
+              <span class="material-symbols-outlined text-manila-accent text-5xl">auto_fix_high</span>
+            </div>
+          </div>
+        </div>
+        <div class="absolute -top-10 -right-4 w-16 h-16 bg-secondary-container rotate-12 flex items-center justify-center font-bold text-3xl shadow-lg">+</div>
+        <div class="absolute -bottom-6 -left-10 w-20 h-20 bg-primary-fixed-dim rounded-full mix-blend-multiply opacity-60"></div>
+      </div>
+    </section>
+
+    <!-- ═══════════ Manila folder tabs ═══════════ -->
+    <section class="mt-24 md:mt-32 scroll-mt-28" id="tools">
+      <div class="flex items-stretch h-[68px] overflow-x-auto no-scrollbar" id="folder-tabs-container"></div>
+
+      <div class="border-x border-b border-outline-variant rounded-b-[2rem] p-8 md:p-16 relative z-20 overflow-hidden bg-surface-variant">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center transition-opacity duration-300" id="tab-content" style="opacity:1; transform:translateY(0px);"></div>
+      </div>
+    </section>
+
+    <!-- ═══════════ Bento grid: all tools ═══════════ -->
+    <section class="mt-32 md:mt-40">
+      <div class="text-center space-y-6 mb-16 md:mb-20">
+        <h2 class="font-headline-lg text-[32px] md:text-headline-lg font-bold text-ink">Essential Tools for Busy Teachers</h2>
+        <p class="font-body-lg text-on-surface-variant max-w-2xl mx-auto">
+          Built specifically for teachers who need to present clear, accessible information to their students on the big screen.
+        </p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10" id="tool-cards"></div>
+    </section>
+
+    <!-- Ad -->
+    <div class="mt-20 max-w-[728px] mx-auto">
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-6623585309429140"
+           data-ad-slot="2577114334"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+      <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
     </div>
 
-    <div class="panel" id="panel-profile" role="tabpanel"></div>
+    <!-- ═══════════ Support CTA ═══════════ -->
+    <section class="mt-32 md:mt-40 bg-ink text-surface-bright rounded-[3rem] md:rounded-[4rem] p-12 md:p-28 relative overflow-hidden scroll-mt-28" id="support">
+      <div class="absolute bottom-0 right-0 w-80 h-80 bg-primary opacity-20 blur-[120px]"></div>
+      <div class="absolute top-0 left-0 w-80 h-80 bg-secondary opacity-20 blur-[120px]"></div>
+      <div class="max-w-2xl mx-auto text-center space-y-10 z-10 relative">
+        <h2 class="font-display-lg text-[40px] md:text-display-lg font-black leading-tight">Keep Us <span class="text-secondary-fixed italic">Free Forever</span></h2>
+        <p class="font-body-lg text-surface-container/90 leading-relaxed">
+          The Teacher Tools is a labor of love. We don't charge for our tools, but your support helps cover hosting costs to keep these resources accessible for every educator worldwide.
+        </p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-6 pt-6">
+          <a href="https://ko-fi.com/kago1" target="_blank" rel="noopener"
+            class="kofi-cta w-full sm:w-auto bg-primary-container text-on-primary-container px-12 py-5 rounded-2xl font-bold text-xl flex items-center justify-center gap-3 hover:scale-105 transition-all shadow-2xl">
+            <span class="material-symbols-outlined">favorite</span>
+            Support on Ko-fi
+          </a>
+        </div>
+      </div>
+    </section>
 
   </main>
 
-  <section class="tool-seo">
-    <h1>Free Classroom Tools for Teachers</h1>
-    <p>The Teacher Tools is a free collection of simple, projector-friendly classroom apps — no sign-up,
-    no download. Pick a tool to get started:</p>
-    <div class="seo-cards">
-      <a class="seo-card" href="student-picker/">
-        <h2>Student Picker</h2>
-        <p>Spin a free random name picker wheel to fairly choose students in class. Paste your roster, spin, and remove names already picked. No sign-up, works on any device.</p>
-      </a>
-      <a class="seo-card" href="seating-arranger/">
-        <h2>Seating Arranger</h2>
-        <p>Build and rearrange classroom seating charts in seconds. Drag desks, auto-assign students, and randomize seating. Free seating chart maker for teachers, no sign-up.</p>
-      </a>
-      <a class="seo-card" href="behavior-chart/">
-        <h2>Behavior Chart</h2>
-        <p>A free clip-up / clip-down classroom behavior chart to track student conduct in real time. Move students between levels and reinforce positive behavior. No sign-up.</p>
-      </a>
-      <a class="seo-card" href="good-noodles/">
-        <h2>Good Noodles</h2>
-        <p>A free Good Noodles reward board to celebrate students who make great choices. Add noodles for positive behavior and motivate your whole class. No sign-up required.</p>
-      </a>
-      <a class="seo-card" href="timer/">
-        <h2>Timer</h2>
-        <p>A free, large classroom countdown timer for lessons, tests, transitions and brain breaks. Easy to read across the room with a clear alarm. No sign-up required.</p>
-      </a>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════ SETTINGS PANEL ═══════════════════════════ -->
-  <div class="sp-overlay" id="spOverlay"></div>
-  <aside class="sp-panel" id="spPanel" role="dialog" aria-label="Settings">
-    <div class="sp-head">
-      <span class="sp-title">Settings</span>
-      <button class="sp-close" id="spClose" aria-label="Close settings">&#x2715;</button>
-    </div>
-    <div class="sp-body">
-      <div class="sp-section">
-        <div class="sp-section-label">Appearance</div>
-        <div class="sp-row">
-          <div class="sp-row-text">
-            <span class="sp-row-label">Dark Mode</span>
-            <span class="sp-row-sub">Deep navy dark theme</span>
-          </div>
-          <button class="sp-toggle" id="darkToggle" role="switch" aria-checked="false" aria-label="Toggle dark mode">
-            <span class="sp-thumb"></span>
-          </button>
+  <!-- ═══════════════════════════ FOOTER ═══════════════════════════ -->
+  <footer class="bg-surface-container-low border-t border-outline-variant pt-20 pb-12 px-margin-mobile md:px-margin-desktop">
+    <div class="max-w-[1280px] mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-16 mb-16">
+        <div class="space-y-6">
+          <a href="./" class="flex items-center gap-3">
+            <img src="Logo.png" alt="" class="w-10 h-10 object-contain rounded-lg opacity-80">
+            <span class="font-display-lg text-[24px] font-black text-ink opacity-80 italic tracking-tight">The Teacher Tools</span>
+          </a>
+          <p class="text-on-surface-variant font-body-md leading-relaxed">
+            Simplifying classroom management with beautiful, functional, and accessible tools for educators. No sign-up, no download — just open and teach.
+          </p>
         </div>
-        <div class="sp-row">
-          <div class="sp-row-text">
-            <span class="sp-row-label">Large Text</span>
-            <span class="sp-row-sub">Bigger labels for projectors</span>
-          </div>
-          <button class="sp-toggle" id="largeTextToggle" role="switch" aria-checked="false" aria-label="Toggle large text">
-            <span class="sp-thumb"></span>
-          </button>
+        <div class="space-y-6">
+          <h3 class="font-label-md uppercase tracking-[0.2em] text-on-surface opacity-60">Tools</h3>
+          <ul class="space-y-4 text-on-surface-variant font-semibold" id="footer-tool-links"></ul>
+        </div>
+        <div class="space-y-6">
+          <h3 class="font-label-md uppercase tracking-[0.2em] text-on-surface opacity-60">More</h3>
+          <ul class="space-y-4 text-on-surface-variant font-semibold">
+            <li><button class="hover:text-primary transition-colors" onclick="openTour(0)">Take the Tour</button></li>
+            <li><button class="hover:text-primary transition-colors" id="footerClassesBtn">Saved Classes</button></li>
+            <li><a class="hover:text-primary transition-colors" href="https://ko-fi.com/kago1" target="_blank" rel="noopener">Support on Ko-fi</a></li>
+          </ul>
         </div>
       </div>
     </div>
-  </aside>
+  </footer>
 
+  <!-- ═══════════════════════════ TOUR MODAL ═══════════════════════════ -->
+  <div id="tourModal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4">
+    <div class="absolute inset-0 bg-ink/70" data-tour-close></div>
+    <div class="relative bg-surface rounded-[2rem] border border-outline-variant shadow-2xl max-w-3xl w-full p-6 md:p-10 animate-fade-in">
+      <div class="flex items-center justify-between mb-6">
+        <span class="inline-flex items-center gap-2 bg-secondary-fixed text-on-secondary-fixed px-4 py-1.5 rounded-full font-label-sm uppercase tracking-widest" id="tourStepLabel">Tour 1 / 5</span>
+        <button class="w-10 h-10 rounded-full bg-surface-container hover:bg-surface-container-highest flex items-center justify-center transition-colors" data-tour-close aria-label="Close tour">
+          <span class="material-symbols-outlined">close</span>
+        </button>
+      </div>
+
+      <div id="tourMedia" class="aspect-video rounded-2xl overflow-hidden bg-surface-container border border-outline-variant mb-6 flex items-center justify-center"></div>
+
+      <h3 class="font-headline-md text-headline-md text-ink mb-2" id="tourTitle"></h3>
+      <p class="font-body-md text-on-surface-variant mb-8" id="tourDesc"></p>
+
+      <div class="flex flex-wrap items-center justify-between gap-4">
+        <div class="flex items-center gap-2" id="tourDots"></div>
+        <div class="flex items-center gap-3">
+          <a id="tourOpenLink" href="#" class="font-label-md text-primary font-bold uppercase tracking-widest inline-flex items-center gap-1 hover:gap-2 transition-all mr-2">
+            Open Tool <span class="material-symbols-outlined text-sm">open_in_new</span>
+          </a>
+          <button id="tourPrev" class="px-5 py-2.5 rounded-lg border border-outline-variant font-bold hover:bg-surface-container transition-colors disabled:opacity-40 disabled:pointer-events-none">Back</button>
+          <button id="tourNext" class="px-5 py-2.5 rounded-lg bg-primary text-on-primary font-bold hover:brightness-110 transition-all">Next</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════ SAVED CLASSES MODAL ═══════════════════════════ -->
+  <div id="classesModal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4">
+    <div class="absolute inset-0 bg-ink/70" data-classes-close></div>
+    <div class="relative bg-surface rounded-[2rem] border border-outline-variant shadow-2xl max-w-3xl w-full p-6 md:p-10 animate-fade-in max-h-[85vh] overflow-y-auto">
+      <div class="flex items-center justify-between mb-2">
+        <h3 class="font-headline-md text-headline-md text-ink">My Classes <span class="text-on-surface-variant text-lg font-normal" id="clsCount"></span></h3>
+        <button class="w-10 h-10 rounded-full bg-surface-container hover:bg-surface-container-highest flex items-center justify-center transition-colors" data-classes-close aria-label="Close">
+          <span class="material-symbols-outlined">close</span>
+        </button>
+      </div>
+      <p class="font-body-md text-on-surface-variant mb-6">
+        Classes are saved on this device. Add each class once, then load it inside the tools.
+      </p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-5" id="clsList"></div>
+      <div class="mt-6">
+        <button id="clsAdd" class="bg-primary text-on-primary px-6 py-3 rounded-xl font-bold hover:brightness-110 transition-all disabled:opacity-40 disabled:pointer-events-none">+ Add Class</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- TTClasses store (same one the tools use) -->
   <script src="js/profile.js"></script>
-  <script src="js/main.js"></script>
-  <script src="js/lang.js"></script>
+
+  <script>
+    /* ════════════════════════════════════════════════
+       TOUR VIDEOS  —  ADD YOUR VIDEO FILES HERE
+       ────────────────────────────────────────────────
+       1. Drop your video files into the  /videos  folder
+          (e.g.  videos/student-picker.mp4 ).
+       2. Replace  null  below with the path, e.g.:
+             'student-picker': 'videos/student-picker.mp4',
+       Any entry left as null (or whose file is missing)
+       shows a friendly placeholder instead.
+       ════════════════════════════════════════════════ */
+    const TOUR_VIDEOS = {
+      'student-picker':   null,   // e.g. 'videos/student-picker.mp4'
+      'seating-arranger': null,   // e.g. 'videos/seating-arranger.mp4'
+      'behavior-chart':   null,   // e.g. 'videos/behavior-chart.mp4'
+      'good-noodles':     null,   // e.g. 'videos/good-noodles.mp4'
+      'timer':            null,   // e.g. 'videos/timer.mp4'
+    };
+
+    /* ─── The tools (links point at the real pages) ─── */
+    const TOOLS = [
+      {
+        slug: 'student-picker',
+        label: 'Student Picker',
+        title: 'Random Student Picker',
+        icon: 'person_search',
+        iconWrap: 'bg-primary/10 text-primary',
+        short: 'Fairly choose students without the bias. Paste your roster, spin the wheel, and keep your class engaged.',
+        card: 'Spin a random name picker wheel to fairly choose students in class. Paste your roster, spin, and remove names already picked.',
+        cta: 'Spin the Wheel',
+      },
+      {
+        slug: 'seating-arranger',
+        label: 'Seating Arranger',
+        title: 'Seating Arranger',
+        icon: 'grid_view',
+        iconWrap: 'bg-primary/10 text-primary',
+        short: 'Build your classroom map in seconds. Drag desks into any formation and auto-fill student seats.',
+        card: 'Drag desks, auto-assign students, and randomize seating charts in seconds with an intuitive drag-and-drop layout.',
+        cta: 'Build a Chart',
+      },
+      {
+        slug: 'behavior-chart',
+        label: 'Behavior Chart',
+        title: 'Behavior Chart',
+        icon: 'assessment',
+        iconWrap: 'bg-secondary-fixed/30 text-secondary',
+        short: 'A digital clip chart that tracks progress throughout the day. Positive reinforcement made visual.',
+        card: 'A clip-up / clip-down behavior chart to track student conduct in real time and reinforce positive behavior.',
+        cta: 'Open Chart',
+      },
+      {
+        slug: 'good-noodles',
+        label: 'Good Noodles',
+        title: 'Good Noodles',
+        icon: 'star',
+        iconWrap: 'bg-secondary-fixed/30 text-secondary',
+        short: 'The ultimate reward board. Celebrate students who make great choices and motivate the whole class.',
+        card: 'A cheerful reward board that celebrates students who make great choices. Award noodles for kindness and effort.',
+        cta: 'Award Noodles',
+      },
+      {
+        slug: 'timer',
+        label: 'Timer',
+        title: 'Classroom Timer',
+        icon: 'timer',
+        iconWrap: 'bg-error-container text-error',
+        short: 'A distraction-free countdown that students can see from the back of the room. Perfect for time management.',
+        card: 'Large, high-contrast countdown timers for tests, transitions, brain breaks, and focus sessions.',
+        cta: 'Set Timer',
+      },
+    ];
+
+    const FEATURE_BULLETS = `
+      <ul class="space-y-4">
+        <li class="flex items-center gap-4 text-on-surface">
+          <span class="material-symbols-outlined text-primary" style="font-variation-settings:'FILL' 1;">check_circle</span>
+          No sign-up or data collection
+        </li>
+        <li class="flex items-center gap-4 text-on-surface">
+          <span class="material-symbols-outlined text-primary" style="font-variation-settings:'FILL' 1;">check_circle</span>
+          Mobile and Desktop friendly
+        </li>
+        <li class="flex items-center gap-4 text-on-surface">
+          <span class="material-symbols-outlined text-primary" style="font-variation-settings:'FILL' 1;">check_circle</span>
+          High visibility for back-of-the-room viewing
+        </li>
+      </ul>`;
+
+    /* ═══════════ Folder tabs ═══════════ */
+    /* Same folder-tab SVG path the tool pages use */
+    const FTAB_SHAPE = `<svg class="ftab-shape" viewBox="0 0 820 160" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+      <path class="ftab-fill" d="M 0 160 L 0 130 L 40 130 L 85 26 Q 97 0, 135 0 L 685 0 Q 723 0, 735 26 L 780 130 L 820 130 L 820 160 Z"/>
+    </svg>`;
+
+    function buildFolderTabs() {
+      const host = document.getElementById('folder-tabs-container');
+      host.innerHTML = TOOLS.map(t => `
+        <div class="ftab" data-tool="${t.slug}" role="button" tabindex="0" aria-selected="false">
+          ${FTAB_SHAPE}
+          <span class="ftab-tape"></span>
+          <span class="ftab-label">${t.label}</span>
+        </div>`).join('');
+      host.addEventListener('click', e => {
+        const tab = e.target.closest('.ftab');
+        if (tab) switchTab(tab.dataset.tool);
+      });
+      host.addEventListener('keydown', e => {
+        const tab = e.target.closest('.ftab');
+        if (tab && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); switchTab(tab.dataset.tool); }
+      });
+    }
+
+    function tabContentHTML(t) {
+      return `
+        <div class="space-y-8 animate-fade-in">
+          <div class="inline-flex items-center gap-2 bg-secondary-fixed text-on-secondary-fixed px-4 py-1.5 rounded-full font-label-sm uppercase tracking-widest">
+            Featured Tool
+          </div>
+          <h3 class="font-headline-lg text-[32px] md:text-headline-lg font-bold text-ink">${t.title}</h3>
+          <p class="font-body-lg text-on-surface-variant leading-relaxed">
+            ${t.short} Optimized for projectors so the whole class can see, from any seat in the room.
+          </p>
+          ${FEATURE_BULLETS}
+          <div class="flex flex-wrap gap-4 pt-4">
+            <a href="${t.slug}/" class="bg-primary text-on-primary px-12 py-5 rounded-xl font-bold text-lg inline-flex items-center gap-3 group transition-all shadow-lg shadow-primary/30 hover:brightness-110">
+              Launch Tool
+              <span class="material-symbols-outlined group-hover:translate-x-2 transition-transform">arrow_forward</span>
+            </a>
+            <button onclick="openTour(${TOOLS.findIndex(x => x.slug === t.slug)})"
+              class="border border-outline-variant px-8 py-5 rounded-xl font-bold text-lg inline-flex items-center gap-2 hover:bg-surface-container transition-all bg-surface">
+              <span class="material-symbols-outlined text-[22px]">play_circle</span> Watch
+            </button>
+          </div>
+        </div>
+        <div class="bg-surface-container rounded-[2rem] p-12 aspect-square flex-col items-center justify-center relative overflow-hidden shadow-inner hidden lg:flex">
+          <div class="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10"></div>
+          <span class="material-symbols-outlined text-[160px] text-primary/30">${t.icon}</span>
+          <div class="mt-12 p-6 bg-white rounded-2xl border border-outline-variant w-full max-w-sm text-center shadow-xl">
+            <p class="font-headline-md text-ink text-xl">${t.title}</p>
+            <div class="mt-4 h-3 bg-surface-container-highest rounded-full overflow-hidden">
+              <div class="h-full bg-primary w-2/3"></div>
+            </div>
+          </div>
+        </div>`;
+    }
+
+    let switchTimer = null;
+    function switchTab(slug, instant) {
+      const t = TOOLS.find(x => x.slug === slug);
+      if (!t) return;
+      document.querySelectorAll('.ftab').forEach(tab => {
+        const on = tab.dataset.tool === slug;
+        tab.classList.toggle('active', on);
+        tab.setAttribute('aria-selected', String(on));
+      });
+
+      const area = document.getElementById('tab-content');
+      if (instant) { area.innerHTML = tabContentHTML(t); return; }
+
+      area.style.opacity = '0';
+      area.style.transform = 'translateY(10px)';
+      clearTimeout(switchTimer);
+      switchTimer = setTimeout(() => {
+        area.innerHTML = tabContentHTML(t);
+        area.style.opacity = '1';
+        area.style.transform = 'translateY(0)';
+      }, 300);
+    }
+
+    /* ═══════════ Bento tool cards ═══════════ */
+    function buildToolCards() {
+      const host = document.getElementById('tool-cards');
+      const cards = TOOLS.map(t => `
+        <a href="${t.slug}/" class="bg-white p-10 rounded-[2.5rem] border border-outline-variant hover:border-primary transition-all hover:shadow-2xl flex flex-col group">
+          <div class="w-16 h-16 ${t.iconWrap} rounded-2xl flex items-center justify-center mb-8">
+            <span class="material-symbols-outlined text-4xl">${t.icon}</span>
+          </div>
+          <h3 class="font-headline-md text-headline-md text-ink mb-5">${t.title}</h3>
+          <p class="font-body-md text-on-surface-variant flex-grow mb-8 leading-relaxed">${t.card}</p>
+          <span class="font-label-md text-primary font-black uppercase tracking-widest inline-flex items-center gap-2 group-hover:gap-4 transition-all">
+            ${t.cta} <span class="material-symbols-outlined text-sm">open_in_new</span>
+          </span>
+        </a>`);
+
+      cards.push(`
+        <button onclick="openTour(0)" class="bg-surface-variant p-10 rounded-[2.5rem] border-2 border-dashed border-manila-accent hover:border-primary transition-all hover:shadow-2xl flex flex-col text-left group">
+          <div class="w-16 h-16 bg-manila-accent/40 text-tertiary rounded-2xl flex items-center justify-center mb-8">
+            <span class="material-symbols-outlined text-4xl">play_circle</span>
+          </div>
+          <h3 class="font-headline-md text-headline-md text-ink mb-5">Take the Tour</h3>
+          <p class="font-body-md text-on-surface-variant flex-grow mb-8 leading-relaxed">New here? Watch a quick walkthrough of every tool and find the perfect fit for your classroom.</p>
+          <span class="font-label-md text-primary font-black uppercase tracking-widest inline-flex items-center gap-2 group-hover:gap-4 transition-all">
+            Play Tour <span class="material-symbols-outlined text-sm">play_arrow</span>
+          </span>
+        </button>`);
+
+      host.innerHTML = cards.join('');
+    }
+
+    /* ═══════════ Footer links ═══════════ */
+    document.getElementById('footer-tool-links').innerHTML = TOOLS.map(t =>
+      `<li><a class="hover:text-primary transition-colors" href="${t.slug}/">${t.label}</a></li>`).join('');
+
+    /* ═══════════════════════════════════════════════
+       TOUR  —  video walkthrough with placeholders
+       ═══════════════════════════════════════════════ */
+    let tourIdx = 0;
+
+    function tourPlaceholderHTML(t) {
+      return `
+        <div class="w-full h-full flex flex-col items-center justify-center gap-4 bg-manila-accent/20 border-2 border-dashed border-manila-accent rounded-2xl m-4 p-6 text-center">
+          <span class="material-symbols-outlined text-6xl text-manila-accent">${t.icon}</span>
+          <p class="font-headline-md text-ink text-lg">Video coming soon</p>
+          <p class="font-body-md text-on-surface-variant text-sm max-w-sm">
+            Drop <code class="bg-surface-container-highest px-1.5 py-0.5 rounded">videos/${t.slug}.mp4</code> into the site folder
+            and point <code class="bg-surface-container-highest px-1.5 py-0.5 rounded">TOUR_VIDEOS</code> at it to show the walkthrough here.
+          </p>
+        </div>`;
+    }
+
+    function renderTourStep() {
+      const t = TOOLS[tourIdx];
+      const media = document.getElementById('tourMedia');
+
+      document.getElementById('tourStepLabel').textContent = `Tour ${tourIdx + 1} / ${TOOLS.length}`;
+      document.getElementById('tourTitle').textContent = t.title;
+      document.getElementById('tourDesc').textContent = t.short;
+      document.getElementById('tourOpenLink').href = t.slug + '/';
+      document.getElementById('tourPrev').disabled = tourIdx === 0;
+      document.getElementById('tourNext').textContent = tourIdx === TOOLS.length - 1 ? 'Finish' : 'Next';
+
+      document.getElementById('tourDots').innerHTML = TOOLS.map((x, i) => `
+        <button class="w-3 h-3 rounded-full transition-all ${i === tourIdx ? 'bg-primary scale-110' : 'bg-outline-variant hover:bg-outline'}"
+          onclick="goTourStep(${i})" aria-label="Go to step ${i + 1}"></button>`).join('');
+
+      media.innerHTML = '';
+      const src = TOUR_VIDEOS[t.slug];
+      if (src) {
+        const video = document.createElement('video');
+        video.src = src;
+        video.controls = true;
+        video.autoplay = true;
+        video.muted = true;
+        video.playsInline = true;
+        video.className = 'w-full h-full object-contain bg-ink';
+        /* file missing or unplayable → fall back to the placeholder */
+        video.addEventListener('error', () => { media.innerHTML = tourPlaceholderHTML(t); });
+        media.appendChild(video);
+      } else {
+        media.innerHTML = tourPlaceholderHTML(t);
+      }
+    }
+
+    function stopTourVideo() {
+      const v = document.querySelector('#tourMedia video');
+      if (v) v.pause();
+    }
+
+    function openTour(idx) {
+      tourIdx = idx || 0;
+      const m = document.getElementById('tourModal');
+      m.classList.remove('hidden');
+      m.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+      renderTourStep();
+    }
+
+    function closeTour() {
+      stopTourVideo();
+      const m = document.getElementById('tourModal');
+      m.classList.add('hidden');
+      m.classList.remove('flex');
+      document.body.style.overflow = '';
+    }
+
+    function goTourStep(i) {
+      stopTourVideo();
+      tourIdx = i;
+      renderTourStep();
+    }
+
+    document.getElementById('play-tour-btn').addEventListener('click', () => openTour(0));
+    document.getElementById('tourPrev').addEventListener('click', () => { if (tourIdx > 0) goTourStep(tourIdx - 1); });
+    document.getElementById('tourNext').addEventListener('click', () => {
+      if (tourIdx < TOOLS.length - 1) goTourStep(tourIdx + 1);
+      else closeTour();
+    });
+    document.querySelectorAll('[data-tour-close]').forEach(el => el.addEventListener('click', closeTour));
+
+    /* ═══════════════════════════════════════════════
+       SAVED CLASSES  —  same TTClasses store the tools
+       use (js/profile.js, localStorage "tt-classes")
+       ═══════════════════════════════════════════════ */
+    function openClasses() {
+      const m = document.getElementById('classesModal');
+      m.classList.remove('hidden');
+      m.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+      renderClassList();
+    }
+    function closeClasses() {
+      const m = document.getElementById('classesModal');
+      m.classList.add('hidden');
+      m.classList.remove('flex');
+      document.body.style.overflow = '';
+    }
+
+    function renderClassList() {
+      const host = document.getElementById('clsList');
+      const list = TTClasses.all();
+      const addBtn = document.getElementById('clsAdd');
+
+      document.getElementById('clsCount').textContent = `(${list.length}/${TTClasses.MAX})`;
+      addBtn.disabled = list.length >= TTClasses.MAX;
+
+      if (!list.length) {
+        host.innerHTML = `
+          <div class="sm:col-span-2 border-2 border-dashed border-outline-variant rounded-2xl p-8 text-center text-on-surface-variant">
+            No classes yet. Click <strong class="text-primary">+ Add Class</strong> to create your first roster (up to ${TTClasses.MAX}).
+          </div>`;
+        return;
+      }
+
+      host.innerHTML = list.map(() => `
+        <div class="cls-card bg-white border border-outline-variant rounded-2xl p-5 flex flex-col gap-3">
+          <div class="flex items-center gap-2">
+            <input class="cls-name flex-1 font-headline-md text-lg font-semibold bg-transparent border-0 border-b border-manila-accent focus:border-primary focus:ring-0 px-1 py-1" maxlength="40" placeholder="Class name">
+            <button class="cls-del w-9 h-9 rounded-lg bg-error-container text-error font-bold hover:brightness-95 transition-all" title="Delete class" aria-label="Delete class">✕</button>
+          </div>
+          <textarea class="cls-names h-32 text-sm bg-surface-container-low border border-outline-variant rounded-xl p-3 focus:border-primary focus:ring-0 resize-none" spellcheck="false" placeholder="One student per line…"></textarea>
+          <span class="cls-num text-xs text-on-surface-variant font-medium"></span>
+        </div>`).join('');
+
+      const countLabel = n => `${n} student${n === 1 ? '' : 's'}`;
+      [...host.querySelectorAll('.cls-card')].forEach((card, i) => {
+        const c = list[i];
+        const nameI = card.querySelector('.cls-name');
+        const ta    = card.querySelector('.cls-names');
+        const numEl = card.querySelector('.cls-num');
+
+        nameI.value = c.name;
+        ta.value = c.students.join('\n');
+        numEl.textContent = countLabel(c.students.length);
+
+        /* edit in place — no re-render, so focus/cursor are preserved */
+        nameI.addEventListener('input', () => TTClasses.rename(c.id, nameI.value.trim() || 'Untitled Class'));
+        ta.addEventListener('input', () => {
+          const names = ta.value.split('\n').map(s => s.trim()).filter(Boolean);
+          TTClasses.setStudents(c.id, names);
+          numEl.textContent = countLabel(names.length);
+        });
+        card.querySelector('.cls-del').addEventListener('click', () => {
+          const cur = TTClasses.get(c.id);
+          const n = cur ? cur.students.length : 0;
+          if (confirm(`Delete “${nameI.value || c.name}”?` + (n ? ` This removes its ${n} saved name${n === 1 ? '' : 's'}.` : ''))) {
+            TTClasses.remove(c.id);
+            renderClassList();
+          }
+        });
+      });
+    }
+
+    document.getElementById('clsAdd').addEventListener('click', () => {
+      const c = TTClasses.add('');
+      if (!c) return;
+      renderClassList();
+      requestAnimationFrame(() => {
+        const cards = document.querySelectorAll('#clsList .cls-card');
+        const last = cards[cards.length - 1];
+        if (last) { const inp = last.querySelector('.cls-name'); inp.focus(); inp.select(); }
+      });
+    });
+    document.getElementById('savedClassesBtn').addEventListener('click', openClasses);
+    document.getElementById('footerClassesBtn').addEventListener('click', openClasses);
+    document.querySelectorAll('[data-classes-close]').forEach(el => el.addEventListener('click', closeClasses));
+
+    /* ═══════════ Escape closes whichever modal is open ═══════════ */
+    document.addEventListener('keydown', e => {
+      if (e.key !== 'Escape') return;
+      if (!document.getElementById('tourModal').classList.contains('hidden')) closeTour();
+      if (!document.getElementById('classesModal').classList.contains('hidden')) closeClasses();
+    });
+
+    /* ═══════════ Search ═══════════ */
+    (function initSearch() {
+      const input = document.getElementById('homeSearchInput');
+      const dd = document.getElementById('homeSearchDropdown');
+      const items = TOOLS.map(t => ({ label: t.label, icon: t.icon, go: () => location.href = t.slug + '/' }))
+        .concat([{ label: 'Saved Classes', icon: 'folder_shared', go: () => { clear(); openClasses(); } }]);
+      let focusedIdx = -1;
+
+      function clear() {
+        input.value = '';
+        dd.classList.add('hidden');
+        dd.innerHTML = '';
+        focusedIdx = -1;
+      }
+
+      function render() {
+        const q = input.value.trim().toLowerCase();
+        focusedIdx = -1;
+        if (!q) { dd.classList.add('hidden'); dd.innerHTML = ''; return; }
+        const matches = items.filter(it => it.label.toLowerCase().includes(q));
+        dd.innerHTML = matches.length
+          ? matches.map((it, i) => `
+              <button class="search-row w-full flex items-center gap-3 px-4 py-3 text-left hover:bg-surface-container-low transition-colors" data-i="${i}">
+                <span class="material-symbols-outlined text-[20px] text-on-surface-variant">${it.icon}</span>
+                <span class="font-body-md text-on-surface">${it.label}</span>
+              </button>`).join('')
+          : `<div class="px-4 py-3 text-on-surface-variant text-sm">No results for “${q.replace(/[&<>"']/g, '')}”</div>`;
+        dd.classList.remove('hidden');
+        dd.querySelectorAll('.search-row').forEach(row => {
+          row.addEventListener('mousedown', e => {
+            e.preventDefault();
+            matches[+row.dataset.i].go();
+          });
+        });
+      }
+
+      input.addEventListener('input', render);
+      input.addEventListener('focus', () => { if (input.value) render(); });
+      input.addEventListener('blur', () => setTimeout(() => dd.classList.add('hidden'), 150));
+      input.addEventListener('keydown', e => {
+        const rows = [...dd.querySelectorAll('.search-row')];
+        if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+          if (!rows.length) return;
+          e.preventDefault();
+          rows.forEach(r => r.classList.remove('bg-surface-container-low'));
+          focusedIdx = Math.max(0, Math.min(rows.length - 1, focusedIdx + (e.key === 'ArrowDown' ? 1 : -1)));
+          rows[focusedIdx].classList.add('bg-surface-container-low');
+        } else if (e.key === 'Enter') {
+          const target = rows[focusedIdx] || rows[0];
+          if (target) target.dispatchEvent(new MouseEvent('mousedown', { bubbles: true }));
+        } else if (e.key === 'Escape') {
+          clear();
+          input.blur();
+        }
+      });
+    })();
+
+    /* ═══════════ init ═══════════ */
+    buildFolderTabs();
+    buildToolCards();
+    switchTab('student-picker', true);
+  </script>
 </body>
 
 </html>
-<style id="__om-edit-overrides">
-#panel-profile .pf-card :is(h1,h2,h3,h4,h5,h6) { font-family: "Playfair Display" !important }
-#panel-profile .pf-card >:is(h1,h2,h3,h4,h5,h6,p,li,dt,dd,blockquote,figcaption,label,span,a,em,strong,small,td,th,caption) { font-family: "Playfair Display" !important }
-#mainContent >[role="tabpanel"] .pf-card { background-color: rgb(253, 255, 249) !important }
-#seatingModal { font-family: "Inter" !important }
-#bcHFace-green [cx="46"] { fill: rgb(44, 202, 50) !important }
-#bcHFace-red [cx="46"] { fill: rgb(200, 74, 71) !important }
-#bcHFace-yellow [cx="46"] { stroke: none !important }
-#panel-tool-d :is(h1,h2,h3,h4,h5,h6) { font-family: "Merriweather" !important }
-</style>
