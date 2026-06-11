@@ -31,22 +31,39 @@
     catch (e) { /* ignore */ }
     students = data
       .filter(s => s && s.name)
-      .map(s => ({ id: uid(), name: String(s.name), zone: ZONES.includes(s.zone) ? s.zone : 'yellow' }));
+      .map(s => {
+        const zone = ZONES.includes(s.zone) ? s.zone : 'yellow';
+        /* already red when loaded → they've had their brows a while */
+        return { id: uid(), name: String(s.name), zone, redSince: zone === 'red' ? 0 : undefined };
+      });
     const input = $('bcInput');
     if (input) input.value = students.map(s => s.name).join('\n');
     renderAll();
   }
 
   /* ── Face SVG generators ── */
+  /* 4-point sparkle star, wrapped in a <g> so the CSS twinkle transform
+     doesn't fight the positioning transform */
+  function sparkle(x, y, r, cls) {
+    const p = v => v.toFixed(1);
+    return `<g transform="translate(${p(x)},${p(y)})">
+      <path class="bcf-spark ${cls}" fill="rgba(255,255,255,0.95)"
+        d="M0,${p(-r)} L${p(r*0.3)},${p(-r*0.3)} L${p(r)},0 L${p(r*0.3)},${p(r*0.3)} L0,${p(r)} L${p(-r*0.3)},${p(r*0.3)} L${p(-r)},0 L${p(-r*0.3)},${p(-r*0.3)} Z"/>
+    </g>`;
+  }
+
   function smileSVG(s, fill) {
-    return `<svg width="${s}" height="${s}" viewBox="0 0 ${s} ${s}" xmlns="http://www.w3.org/2000/svg">
+    return `<svg width="${s}" height="${s}" viewBox="0 0 ${s} ${s}" xmlns="http://www.w3.org/2000/svg" style="overflow:visible">
       <circle cx="${s/2}" cy="${s/2}" r="${s/2-1}" fill="${fill}" stroke="rgba(0,0,0,0.12)" stroke-width="1.5"/>
-      <circle cx="${(s*0.35).toFixed(1)}" cy="${(s*0.38).toFixed(1)}" r="${(s*0.075).toFixed(1)}" fill="rgba(0,0,0,0.7)"/>
-      <circle cx="${(s*0.65).toFixed(1)}" cy="${(s*0.38).toFixed(1)}" r="${(s*0.075).toFixed(1)}" fill="rgba(0,0,0,0.7)"/>
-      <path d="M${(s*0.27).toFixed(1)},${(s*0.57).toFixed(1)} Q${s/2},${(s*0.77).toFixed(1)} ${(s*0.73).toFixed(1)},${(s*0.57).toFixed(1)}"
+      <circle class="bcf-eye" cx="${(s*0.35).toFixed(1)}" cy="${(s*0.38).toFixed(1)}" r="${(s*0.075).toFixed(1)}" fill="rgba(0,0,0,0.7)"/>
+      <circle class="bcf-eye e2" cx="${(s*0.65).toFixed(1)}" cy="${(s*0.38).toFixed(1)}" r="${(s*0.075).toFixed(1)}" fill="rgba(0,0,0,0.7)"/>
+      <path class="bcf-mouth" d="M${(s*0.27).toFixed(1)},${(s*0.57).toFixed(1)} Q${s/2},${(s*0.77).toFixed(1)} ${(s*0.73).toFixed(1)},${(s*0.57).toFixed(1)}"
         stroke="rgba(0,0,0,0.7)" stroke-width="${(s*0.055).toFixed(1)}" fill="none" stroke-linecap="round"/>
       <circle cx="${(s*0.23).toFixed(1)}" cy="${(s*0.59).toFixed(1)}" r="${(s*0.1).toFixed(1)}" fill="rgba(255,80,80,0.22)"/>
       <circle cx="${(s*0.77).toFixed(1)}" cy="${(s*0.59).toFixed(1)}" r="${(s*0.1).toFixed(1)}" fill="rgba(255,80,80,0.22)"/>
+      ${sparkle(s*0.41, s*0.31, s*0.07,  's1')}
+      ${sparkle(s*0.71, s*0.31, s*0.07,  's2')}
+      ${sparkle(s*0.29, s*0.46, s*0.045, 's3')}
     </svg>`;
   }
 
@@ -62,12 +79,14 @@
   }
 
   function frownSVG(s, fill) {
-    return `<svg width="${s}" height="${s}" viewBox="0 0 ${s} ${s}" xmlns="http://www.w3.org/2000/svg">
+    return `<svg width="${s}" height="${s}" viewBox="0 0 ${s} ${s}" xmlns="http://www.w3.org/2000/svg" style="overflow:visible">
       <circle cx="${s/2}" cy="${s/2}" r="${s/2-1}" fill="${fill}" stroke="rgba(0,0,0,0.12)" stroke-width="1.5"/>
-      <path d="M${(s*0.27).toFixed(1)},${(s*0.3).toFixed(1)} L${(s*0.41).toFixed(1)},${(s*0.34).toFixed(1)}"
-        stroke="rgba(0,0,0,0.55)" stroke-width="${(s*0.045).toFixed(1)}" stroke-linecap="round"/>
-      <path d="M${(s*0.73).toFixed(1)},${(s*0.3).toFixed(1)} L${(s*0.59).toFixed(1)},${(s*0.34).toFixed(1)}"
-        stroke="rgba(0,0,0,0.55)" stroke-width="${(s*0.045).toFixed(1)}" stroke-linecap="round"/>
+      <g class="bcf-brows">
+        <path d="M${(s*0.27).toFixed(1)},${(s*0.3).toFixed(1)} L${(s*0.41).toFixed(1)},${(s*0.34).toFixed(1)}"
+          stroke="rgba(0,0,0,0.55)" stroke-width="${(s*0.045).toFixed(1)}" stroke-linecap="round"/>
+        <path d="M${(s*0.73).toFixed(1)},${(s*0.3).toFixed(1)} L${(s*0.59).toFixed(1)},${(s*0.34).toFixed(1)}"
+          stroke="rgba(0,0,0,0.55)" stroke-width="${(s*0.045).toFixed(1)}" stroke-linecap="round"/>
+      </g>
       <circle cx="${(s*0.35).toFixed(1)}" cy="${(s*0.41).toFixed(1)}" r="${(s*0.075).toFixed(1)}" fill="rgba(0,0,0,0.7)"/>
       <circle cx="${(s*0.65).toFixed(1)}" cy="${(s*0.41).toFixed(1)}" r="${(s*0.075).toFixed(1)}" fill="rgba(0,0,0,0.7)"/>
       <path d="M${(s*0.27).toFixed(1)},${(s*0.7).toFixed(1)} Q${s/2},${(s*0.52).toFixed(1)} ${(s*0.73).toFixed(1)},${(s*0.7).toFixed(1)}"
@@ -90,7 +109,9 @@
     const zonesHTML = ZONES.map(z => `
       <div class="bc-zone" id="bcZone-${z}" data-zone="${z}" style="background:${ZONE_BG[z]}">
         <div class="bc-zone-head">
-          <div class="bc-head-face" id="bcHFace-${z}">${faceSVG(z, 92)}</div>
+          <div class="bc-head-face" id="bcHFace-${z}">${faceSVG(z, 92)}${
+            z === 'red' ? '<img class="bcf-fire-gif" src="../images/fire.gif" alt="">' : ''
+          }</div>
           <div class="bc-zone-label" style="color:${HEADER_CLR[z]}">${ZONE_LABEL[z]}</div>
         </div>
         <div class="bc-cards-area" id="bcArea-${z}">
@@ -165,36 +186,40 @@
     checkAnim();
   }
 
+  const BROW_DELAY = 2200; /* ms a student is red before the brows arrive */
+
   function mkCard(student, zone) {
     const div = document.createElement('div');
     div.className  = 'bc-card' + (selected.has(student.id) ? ' sel' : '');
     div.dataset.id = student.id;
+
+    /* Red faces: brows arrive BROW_DELAY after entering red, then stick.
+       Re-renders keep the remaining delay so the brows never blink away. */
+    let faceCls = 'bc-card-face', faceStyle = '', extra = '';
+    if (zone === 'red') {
+      extra = '<img class="bcf-fire-gif" src="../images/fire.gif" alt="">';
+      const elapsed = Date.now() - (student.redSince || 0);
+      if (elapsed >= BROW_DELAY) faceCls += ' bcf-browed';
+      else faceStyle = ` style="--brow-delay:${BROW_DELAY - elapsed}ms"`;
+    }
+
     div.innerHTML  = `
-      <div class="bc-card-face" id="bcCF-${student.id}">${faceSVG(zone, 64)}</div>
+      <div class="${faceCls}" id="bcCF-${student.id}"${faceStyle}>${faceSVG(zone, 64)}${extra}</div>
       <div class="bc-card-name">${escH(student.name)}</div>`;
     return div;
   }
 
-  /* ── Animations ── */
+  /* ── Animations ──
+     Faces animate via CSS. JS only tracks two class-wide states:
+     .bc-allgreen on the chart  → eye sparkles run (whole class green)
+     .bc-allred on the red head → "Needs Work" face earns its eyebrows */
   function checkAnim() {
-    const n       = students.length;
+    const n        = students.length;
     const allGreen = n > 0 && students.every(s => s.zone === 'green');
     const allRed   = n > 0 && students.every(s => s.zone === 'red');
-
-    ZONES.forEach(z => {
-      const hf = $(`bcHFace-${z}`);
-      if (!hf) return;
-      hf.classList.remove('bc-bounce', 'bc-shake');
-      if (allGreen && z === 'green') hf.classList.add('bc-bounce');
-      if (allRed   && z === 'red')   hf.classList.add('bc-shake');
-    });
-
-    document.querySelectorAll('.bc-card-face').forEach(face => {
-      face.classList.remove('bc-bounce', 'bc-shake');
-      const zone = face.closest('.bc-zone')?.dataset.zone;
-      if (allGreen && zone === 'green') face.classList.add('bc-bounce');
-      if (allRed   && zone === 'red')   face.classList.add('bc-shake');
-    });
+    $('bcChart')?.classList.toggle('bc-allgreen', allGreen);
+    const hfRed = $('bcHFace-red');
+    if (hfRed) hfRed.classList.toggle('bc-allred', allRed);
   }
 
   /* ── Zone mousedown ── */
@@ -312,7 +337,10 @@
       if (dragState.moved && targetZone) {
         dragState.ids.forEach(id => {
           const st = students.find(s => s.id === id);
-          if (st) st.zone = targetZone;
+          if (!st) return;
+          if (targetZone === 'red' && st.zone !== 'red') st.redSince = Date.now();
+          if (targetZone !== 'red') delete st.redSince;
+          st.zone = targetZone;
         });
         selected.clear();
         renderAll();

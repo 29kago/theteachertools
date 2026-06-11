@@ -339,8 +339,13 @@
             </div>
           </div>
           <div class="seating-actions">
+            <label class="sa-countwrap" title="How many copies one drag creates">
+              <span class="sa-count-label">Count:</span>
+              <input type="number" id="saCount" class="si sa-count sm-no-spin" min="1" max="12" value="1">
+            </label>
             <span class="sa-classmount" id="saClassMount"></span>
             <button class="sa-btn"           id="saAutoFill" title="Place the loaded class into empty seats">Auto-fill Seats</button>
+            <button class="sa-btn"           id="saAlign" title="Line up the selected items into level, evenly spaced rows and columns">Align Selected</button>
             <button class="sa-btn"           id="saDelete">Delete Selected</button>
             <button class="sa-btn sa-danger" id="saClear">Clear All</button>
           </div>
@@ -366,6 +371,7 @@
       $('saAutoFill').remove();
     }
 
+    $('saAlign').addEventListener('click', alignSelected);
     $('saDelete').addEventListener('click', deleteSelected);
     $('saClear').addEventListener('click', () => {
       if (!elements.length) return;
@@ -433,6 +439,12 @@
     renderAll();
   }
 
+  /* ── Placement count (the "Count:" box in the toolbar) ── */
+  function placeCount() {
+    const n = parseInt($('saCount')?.value, 10);
+    return Math.max(1, Math.min(12, isNaN(n) ? 1 : n));
+  }
+
   /* ── Ghost drag ── */
   function startGhost(e, type) {
     const tmp  = { type, color: 'grey', tableName: '', students: [], studentCount: 4, rotation: 0 };
@@ -440,7 +452,8 @@
     const ghost = document.createElement('div');
     ghost.className   = 'seat-ghost';
     ghost.style.cssText = `width:${d.w}px;height:${d.h}px;left:${e.clientX-d.w/2}px;top:${e.clientY-d.h/2}px`;
-    ghost.innerHTML   = elHTML(tmp);
+    const n = placeCount();
+    ghost.innerHTML   = elHTML(tmp) + (n > 1 ? `<span class="ghost-mult">&times;${n}</span>` : '');
     document.body.appendChild(ghost);
     ghostDrag = { type, ghost, d };
   }
@@ -526,17 +539,32 @@
       const cx = e.clientX - r.left, cy = e.clientY - r.top;
       if (cx >= 0 && cy >= 0 && cx <= r.width && cy <= r.height) {
         const isTable = type === 'rect-table' || type === 'circle-table';
-        const sc = isTable ? 4 : 1;
-        const newEl = {
-          id: uid(), type, color: 'grey', rotation: 0,
-          tableName: '', studentCount: sc,
-          students: Array(sc).fill(''),
-          x: Math.max(0, Math.min(r.width  - d.w, cx - d.w/2)),
-          y: Math.max(0, Math.min(r.height - d.h, cy - d.h/2)),
-        };
-        elements.push(newEl);
+        const sc    = isTable ? 4 : 1;
+        const count = placeCount();
+        const GAP   = 14;
+
+        /* lay the copies out in rows starting at the drop point,
+           wrapping when they would run off the right edge */
+        const x0 = Math.max(0, Math.min(r.width  - d.w, cx - d.w/2));
+        const y0 = Math.max(0, Math.min(r.height - d.h, cy - d.h/2));
+        const perRow = Math.max(1, Math.floor((r.width - x0 + GAP) / (d.w + GAP)));
+
+        let firstId = null;
+        for (let i = 0; i < count; i++) {
+          const col = i % perRow, row = Math.floor(i / perRow);
+          const newEl = {
+            id: uid(), type, color: 'grey', rotation: 0,
+            tableName: '', studentCount: sc,
+            students: Array(sc).fill(''),
+            x: Math.max(0, Math.min(r.width  - d.w, x0 + col * (d.w + GAP))),
+            y: Math.max(0, Math.min(r.height - d.h, y0 + row * (d.h + GAP))),
+          };
+          elements.push(newEl);
+          if (!firstId) firstId = newEl.id;
+        }
         renderAll();
-        openModal(newEl.id);   /* open for all types including whiteboard */
+        /* only auto-open the editor when placing a single item */
+        if (count === 1 && firstId) openModal(firstId);
       }
       ghost.remove(); ghostDrag = null;
     }
@@ -562,6 +590,84 @@
   function deleteSelected() {
     elements = elements.filter(el => !selected.has(el.id));
     selected.clear(); renderAll();
+  }
+
+  /* ── Align Selected ──
+     Tidies the selected items into level, evenly spaced rows and
+     columns based on where they roughly are already:
+       1. cluster items into rows by vertical proximity
+       2. level each row (tops aligned) and spread items evenly
+       3. space the rows themselves evenly
+       4. if the rows form a grid (or a single column), line the
+          columns up on shared x positions too                       */
+  function alignSelected() {
+    const items = elements
+      .filter(el => selected.has(el.id))
+      .map(el => ({ el, d: dims(el) }));
+    if (items.length < 2) {
+      alert('Select two or more items first (drag a box around them or shift-click), then press Align Selected.');
+      return;
+    }
+
+    /* 1 ── cluster into rows by vertical center proximity */
+    items.sort((a, b) => (a.el.y + a.d.h / 2) - (b.el.y + b.d.h / 2));
+    const rows = [];
+    items.forEach(it => {
+      const cy  = it.el.y + it.d.h / 2;
+      const row = rows.find(rw => Math.abs(rw.cy - cy) < Math.max(40, rw.maxH * 0.6));
+      if (row) {
+        row.items.push(it);
+        row.cy   = row.items.reduce((s, i) => s + i.el.y + i.d.h / 2, 0) / row.items.length;
+        row.maxH = Math.max(row.maxH, it.d.h);
+      } else {
+        rows.push({ cy, maxH: it.d.h, items: [it] });
+      }
+    });
+
+    /* 2 ── per row: level tops, spread evenly between current extremes */
+    rows.forEach(rw => {
+      rw.items.sort((a, b) => a.el.x - b.el.x);
+      rw.top = Math.min(...rw.items.map(i => i.el.y));
+      if (rw.items.length > 1) {
+        const left   = rw.items[0].el.x;
+        const right  = Math.max(...rw.items.map(i => i.el.x + i.d.w));
+        const totalW = rw.items.reduce((s, i) => s + i.d.w, 0);
+        const gap    = Math.max(10, (right - left - totalW) / (rw.items.length - 1));
+        let x = left;
+        rw.items.forEach(i => { i.el.x = x; x += i.d.w + gap; });
+      }
+      rw.items.forEach(i => { i.el.y = rw.top; });
+    });
+
+    /* 3 ── space the rows evenly between the first and last row */
+    rows.sort((a, b) => a.top - b.top);
+    if (rows.length > 1) {
+      const firstTop   = rows[0].top;
+      const lastBottom = Math.max(...rows[rows.length - 1].items.map(i => i.el.y + i.d.h));
+      const totalH     = rows.reduce((s, rw) => s + rw.maxH, 0);
+      const vgap       = Math.max(12, (lastBottom - firstTop - totalH) / (rows.length - 1));
+      let y = firstTop;
+      rows.forEach(rw => {
+        rw.items.forEach(i => { i.el.y = y; });
+        y += rw.maxH + vgap;
+      });
+    }
+
+    /* 4 ── line columns up when the shape allows it */
+    if (rows.length > 1 && rows.every(rw => rw.items.length === 1)) {
+      /* pure column → share one x */
+      const left = Math.min(...items.map(i => i.el.x));
+      items.forEach(i => { i.el.x = left; });
+    } else if (rows.length > 1 && rows.every(rw => rw.items.length === rows[0].items.length)) {
+      /* even grid → each column shares the leftmost x of that column */
+      for (let c = 0; c < rows[0].items.length; c++) {
+        const colX = Math.min(...rows.map(rw => rw.items[c].el.x));
+        rows.forEach(rw => { rw.items[c].el.x = colX; });
+      }
+    }
+
+    items.forEach(({ el }) => clampPos(el));
+    renderAll();
   }
 
   /* ── Modal ── */

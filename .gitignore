@@ -1,0 +1,20 @@
+# Working / scratch files — not part of the published site
+scraps/
+uploads/
+screenshots/
+videos/*.mp4
+videos/*.mov
+videos/*.webm
+index.html.bak
+.thumbnail
+
+# Editor / tooling
+.claude/
+.vscode/
+.idea/
+*.swp
+
+# OS cruft
+Thumbs.db
+desktop.ini
+.DS_Store

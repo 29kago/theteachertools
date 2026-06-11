@@ -1,0 +1,334 @@
+/* ═══════════════════════════════════════════════
+   THE TEACHER TOOLS  —  "Manila & Ink" theme
+   ───────────────────────────────────────────────
+   Loaded AFTER css/style.css on every tool page.
+   Restyles ONLY the shared shell (header, tab bar,
+   panel background, SEO cards) to match the new
+   homepage. Tool internals are untouched, and dark
+   mode keeps working because body.dark re-overrides
+   the same CSS variables with higher specificity.
+   ═══════════════════════════════════════════════ */
+
+:root {
+  /* Shell palette — matches the homepage tokens */
+  --header-bg:     #fdf9ef;   /* surface           */
+  --header-rule:   rgba(28, 28, 22, 0.10);
+  --search-bg:     #f1eee4;   /* surface-container */
+  --search-ph:     #707783;   /* outline           */
+
+  --tabbar-bg:     #fdf9ef;   /* same cream as the header/homepage */
+  --manila:        #e2ddd0;   /* inactive folder tab   */
+  --manila-hover:  #ded3bb;
+  --manila-active: #d9c5a3;   /* manila-accent         */
+  --manila-shadow: rgba(120, 90, 40, 0.14);
+
+  --tape-bg:       rgba(238, 218, 148, 0.40);
+  --tape-edge:     rgba(210, 185, 110, 0.24);
+  --tape-glow:     rgba(255, 250, 200, 0.38);
+
+  --content-bg:    #fdf9ef;
+  --panel-bg:      #fdf9ef;
+
+  --font-serif:    'Fraunces', 'Playfair Display', Georgia, serif;
+}
+
+/* ─── Brand ─── */
+.brand-text {
+  font-family: 'Fraunces', 'Playfair Display', Georgia, serif !important;
+  font-style: italic;
+  font-weight: 900;
+  font-size: 26px;
+  letter-spacing: -0.02em;
+}
+
+/* ─── Search bar (light mode only — dark mode keeps its own look) ─── */
+body:not(.dark) .search-bar {
+  border: 1px solid #d8d2c2;
+  background: #f7f3e9;
+}
+body:not(.dark) .search-bar:focus-within {
+  background: #ffffff;
+  border-color: #005ea4;
+  box-shadow: 0 0 0 2.5px rgba(0, 94, 164, 0.16);
+}
+
+/* ─── Folder tab labels: handwritten → clean Inter, like the homepage tabs ─── */
+.tab { text-decoration: none; }
+.tab-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 15.5px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: #404752;
+  text-shadow: none;
+}
+.tab.active .tab-label {
+  color: #1c1c16;
+}
+body.large-text .tab-label { font-size: 18px; }
+
+/* ─── Ko-fi button → homepage yellow ─── */
+.kofi-btn { background: #fdc003; color: #1c1c16; border-radius: 10px; }
+
+/* ─── SEO section under each tool ─── */
+.tool-seo h1,
+.tool-seo h2,
+.seo-card h2 {
+  font-family: 'Outfit', 'Inter', sans-serif;
+  letter-spacing: -0.01em;
+  color: inherit;
+}
+.tool-seo a { color: #005ea4; }
+
+body:not(.dark) .seo-card {
+  background: #ffffff;
+  border: 1px solid #c0c7d4;
+  border-radius: 18px;
+  transition: box-shadow 0.15s ease, transform 0.15s ease, border-color 0.15s ease;
+}
+body:not(.dark) .seo-card:hover {
+  border-color: #005ea4;
+  box-shadow: 0 8px 24px rgba(0, 94, 164, 0.10);
+}
+
+/* ─── Settings panel headline font ─── */
+.sp-title { font-family: 'Outfit', 'Inter', sans-serif; }
+
+/* ═══════════════════════════════════════════════
+   TOOL CHROME REDESIGN
+   ───────────────────────────────────────────────
+   Restyles the controls AROUND each tool (buttons,
+   inputs, toolbars, modals) to the homepage look:
+   white cards on cream, outline-variant borders,
+   primary blue #005ea4, Outfit headings, generous
+   radii. The tools' working parts (wheel canvas,
+   chalkboard, LCD watch, drag/drop) are untouched.
+   All color overrides are scoped to body:not(.dark)
+   so dark mode keeps its own palette.
+   ═══════════════════════════════════════════════ */
+
+/* ─── Shared focus ring + button language ─── */
+:root {
+  --tt-blue:       #005ea4;
+  --tt-blue-hover: #0077ce;
+  --tt-ring:       rgba(0, 94, 164, 0.15);
+  --tt-border:     #c0c7d4;
+  --tt-border-soft:#e2ddd0;
+}
+
+/* ═══════════ STUDENT PICKER ═══════════ */
+body:not(.dark) .picker-wheel-col {
+  background: #f1eee4;
+  border-right: 1px solid var(--tt-border-soft);
+}
+
+.remove-btn { border-radius: 12px; }
+body:not(.dark) .remove-btn { background: #ba1a1a; }
+body:not(.dark) .remove-btn:hover {
+  background: #d32f2f;
+  box-shadow: 0 4px 14px rgba(186, 26, 26, 0.30);
+}
+body:not(.dark) .remove-btn:active { background: #93000a; }
+
+#namesInput { border-radius: 16px; }
+body:not(.dark) #namesInput {
+  background: #ffffff;
+  border: 1px solid var(--tt-border);
+  color: #1c1c16;
+}
+body:not(.dark) #namesInput:focus {
+  background: #ffffff;
+  border-color: var(--tt-blue);
+  box-shadow: 0 0 0 2.5px var(--tt-ring);
+}
+
+.result-overlay { border-radius: 16px; }
+body:not(.dark) .result-overlay {
+  background: rgba(253, 249, 239, 0.97);
+  border: 1px solid var(--tt-border);
+}
+/* The winner reveal — a little display moment, like the homepage hero */
+.result-name {
+  font-family: 'Fraunces', 'Playfair Display', Georgia, serif;
+  font-style: italic;
+  font-weight: 900;
+}
+body:not(.dark) .result-name { color: var(--tt-blue); }
+
+.selected-list li { border-radius: 10px; }
+body:not(.dark) .selected-list li {
+  background: #ffffff;
+  border: 1px solid var(--tt-border-soft);
+}
+body:not(.dark) .sel-num { color: var(--tt-blue); }
+
+/* ═══════════ SEATING ARRANGER ═══════════ */
+body:not(.dark) .seating-toolbar {
+  background: #f7f3e9;
+  border-bottom-color: var(--tt-border-soft);
+}
+
+.palette-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 10.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+body:not(.dark) .palette-label { color: #707783; }
+
+.palette-item { border-radius: 12px; }
+body:not(.dark) .palette-item {
+  background: #ffffff;
+  border-color: var(--tt-border);
+}
+body:not(.dark) .palette-item:hover {
+  border-color: var(--tt-blue);
+  box-shadow: 0 4px 12px rgba(0, 94, 164, 0.12);
+}
+
+.sa-btn { border-radius: 10px; }
+body:not(.dark) .sa-btn {
+  background: #ffffff;
+  border-color: var(--tt-border);
+  color: #1c1c16;
+}
+body:not(.dark) .sa-btn:hover {
+  background: #f7f3e9;
+  border-color: var(--tt-blue);
+  box-shadow: none;
+}
+body:not(.dark) .sa-btn.sa-danger {
+  background: #ffdad6;
+  color: #93000a;
+  border-color: rgba(147, 0, 10, 0.20);
+}
+body:not(.dark) .sa-btn.sa-danger:hover { background: #ffc4bd; }
+
+body:not(.dark) .seat-el.sel { outline-color: var(--tt-blue); }
+body:not(.dark) .sel-band {
+  border-color: var(--tt-blue);
+  background: rgba(0, 94, 164, 0.07);
+}
+
+/* Seat/table modal */
+.sm-box { border-radius: 20px; }
+.sm-title { font-family: 'Outfit', 'Inter', sans-serif; }
+.si, .sm-btn { border-radius: 10px; }
+body:not(.dark) .si:focus {
+  border-color: var(--tt-blue);
+  box-shadow: 0 0 0 3px var(--tt-ring);
+}
+body:not(.dark) .sm-btn.sm-ok { background: var(--tt-blue); }
+body:not(.dark) .sm-btn.sm-ok:hover {
+  background: var(--tt-blue-hover);
+  box-shadow: 0 2px 8px rgba(0, 94, 164, 0.35);
+}
+body:not(.dark) .cswatch.active { box-shadow: 0 0 0 3px var(--tt-blue); }
+
+/* ═══════════ BEHAVIOR CHART ═══════════ */
+.bc-zone-label { font-family: 'Outfit', 'Inter', sans-serif; }
+.bc-card { border-radius: 16px; }
+body:not(.dark) .bc-card.sel { outline-color: var(--tt-blue); }
+body:not(.dark) .bc-sel-band {
+  border-color: var(--tt-blue);
+  background: rgba(0, 94, 164, 0.07);
+}
+
+.bc-names-title { font-family: 'Outfit', 'Inter', sans-serif; }
+.bc-names-input { border-radius: 16px; }
+body:not(.dark) .bc-names-input {
+  background: #ffffff;
+  border: 1px solid var(--tt-border);
+  color: #1c1c16;
+}
+body:not(.dark) .bc-names-input:focus {
+  background: #ffffff;
+  border-color: var(--tt-blue);
+  box-shadow: 0 0 0 2.5px var(--tt-ring);
+}
+
+/* ═══════════ TIMER ═══════════
+   The watch is left alone — only the controls below it. */
+.tm-num { border-radius: 10px; }
+body:not(.dark) .tm-num:focus {
+  border-color: var(--tt-blue);
+  box-shadow: 0 0 0 3px var(--tt-ring);
+}
+body:not(.dark) .tm-setfields label { color: #707783; }
+
+.tm-chip { border-radius: 999px; padding: 8px 16px; }
+body:not(.dark) .tm-chip {
+  background: #ffffff;
+  border-color: var(--tt-border);
+  color: #1c1c16;
+}
+body:not(.dark) .tm-chip:hover {
+  border-color: var(--tt-blue);
+  box-shadow: 0 2px 8px rgba(0, 94, 164, 0.12);
+}
+
+.tm-btn { border-radius: 12px; }
+body:not(.dark) .tm-btn {
+  background: #ffffff;
+  border: 1px solid var(--tt-border);
+  color: #1c1c16;
+}
+body:not(.dark) .tm-btn:hover { background: #f7f3e9; }
+body:not(.dark) .tm-primary {
+  background: var(--tt-blue);
+  border-color: transparent;
+  color: #ffffff;
+}
+body:not(.dark) .tm-primary:hover {
+  background: var(--tt-blue-hover);
+  box-shadow: 0 4px 14px rgba(0, 94, 164, 0.30);
+}
+
+/* ═══════════ CLASS PICKER (Load Class dropdown) ═══════════ */
+.ttcp-btn { border-radius: 10px; }
+body:not(.dark) .ttcp-btn { border-color: var(--tt-border); }
+body:not(.dark) .ttcp-btn:hover {
+  background: #f7f3e9;
+  border-color: var(--tt-blue);
+}
+.ttcp-menu { border-radius: 14px; }
+body:not(.dark) .ttcp-link { color: var(--tt-blue); }
+body:not(.dark) .ttcp-link:hover { background: rgba(0, 94, 164, 0.08); }
+body:not(.dark) .tool-classbar-label { color: #707783; }
+
+/* Keep the gold on-chalkboard variant exactly as it was */
+body:not(.dark) .ttcp.ttcp--ondark .ttcp-btn {
+  background: rgba(255, 255, 255, 0.10);
+  border-color: rgba(255, 215, 0, 0.38);
+  color: #FFE9A8;
+}
+
+/* ═══════════ PROFILE (My Classes) ═══════════ */
+.pf-h { font-family: 'Outfit', 'Inter', sans-serif; }
+.pf-card { border-radius: 24px; }
+body:not(.dark) .pf-card { border-color: var(--tt-border); }
+
+.pf-add { border-radius: 12px; }
+body:not(.dark) .pf-add { background: var(--tt-blue); }
+body:not(.dark) .pf-add:hover:not(:disabled) {
+  background: var(--tt-blue-hover);
+  box-shadow: 0 2px 10px rgba(0, 94, 164, 0.30);
+}
+
+.pf-cls { border-radius: 14px; }
+body:not(.dark) .pf-cls {
+  background: #f7f3e9;
+  border-color: var(--tt-border-soft);
+}
+body:not(.dark) .pf-empty {
+  background: #fdf9ef;
+  border: 2px dashed #d9c5a3;
+  border-radius: 16px;
+}
+body:not(.dark) .pf-cls-name:focus,
+body:not(.dark) .pf-cls-names:focus {
+  border-color: var(--tt-blue);
+  box-shadow: 0 0 0 3px var(--tt-ring);
+}
+body:not(.dark) .pf-note strong { color: var(--tt-blue); }
