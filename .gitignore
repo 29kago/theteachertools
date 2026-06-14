@@ -2,9 +2,6 @@
 scraps/
 uploads/
 screenshots/
-videos/*.mp4
-videos/*.mov
-videos/*.webm
 index.html.bak
 .thumbnail
 

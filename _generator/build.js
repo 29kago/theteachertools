@@ -38,110 +38,97 @@ const PAGES = {
   'student-picker': {
     nav: 'tool-a',
     title: 'Random Student Picker Wheel — The Teacher Tools',
-    description: 'Spin a free random name picker wheel to fairly choose students in class. Paste your roster, spin, and remove names already picked. No sign-up, works on any device.',
+    description: 'A random name picker wheel that calls on students fairly. Paste your class list, spin, and remove names already chosen.',
     extraScripts: [],
     seo: {
       h1: 'Random Student Picker Wheel',
       body: `
-        <p>The <strong>Random Student Picker</strong> is a free spinning name wheel that helps teachers
-        call on students fairly and keep the classroom engaged. Paste your class roster — one name or
-        group per line — give the wheel a spin, and let it choose at random.</p>
-        <h2>How to use the student picker</h2>
+        <p>The <strong>Random Student Picker</strong> is a spinning name wheel that helps you call on
+        students fairly instead of always hearing from the same few hands.</p>
+        <h2>How to use it</h2>
         <ol>
-          <li>Type or paste your students' names into the box (one per line).</li>
-          <li>Click the wheel to spin it.</li>
-          <li>The selected student is shown — remove them so they aren't picked twice.</li>
+          <li>Paste your class list into the box, one name per line.</li>
+          <li>Click the wheel to spin.</li>
+          <li>Remove the chosen name so nobody gets picked twice.</li>
         </ol>
-        <h2>Why teachers love it</h2>
-        <p>No more "pick me!" — the wheel makes selection feel fair and fun. It works on interactive
-        whiteboards, projectors, tablets and phones, and needs no account or download.</p>`,
+        <p>It works on interactive whiteboards, tablets and phones, with nothing to install.</p>`,
     },
   },
   'seating-arranger': {
     nav: 'tool-b',
     title: 'Classroom Seating Chart Maker — The Teacher Tools',
-    description: 'Build and rearrange classroom seating charts in seconds. Drag desks, auto-assign students, and randomize seating. Free seating chart maker for teachers, no sign-up.',
+    description: 'Design a classroom seating chart by dragging desks into place, then assign or shuffle students into seats.',
     extraScripts: ['js/seating.js'],
     seo: {
       h1: 'Classroom Seating Chart Maker',
       body: `
-        <p>The <strong>Seating Arranger</strong> lets you design a classroom layout and place students
-        at desks in minutes. Arrange desks to match your real room, then assign or randomize seats.</p>
-        <h2>Features</h2>
+        <p>The <strong>Seating Arranger</strong> lets you map your classroom and place students at desks
+        in a few minutes. Arrange furniture to match your real room, then assign or shuffle seats.</p>
+        <h2>What you can do</h2>
         <ul>
-          <li>Drag-and-drop desks and furniture to match your classroom.</li>
-          <li>Auto-assign or randomly shuffle students into seats.</li>
-          <li>Save your layout and reuse it for different classes.</li>
+          <li>Drag desks and tables into any layout.</li>
+          <li>Auto-assign students or shuffle them at random.</li>
+          <li>Save a layout and reuse it for each class.</li>
         </ul>
-        <h2>Great for new seating plans</h2>
-        <p>Refresh your seating chart whenever behavior or group work calls for a change — it only takes
-        a few clicks, and it's completely free.</p>`,
+        <p>Rearranging for group work or a fresh start takes only a few clicks.</p>`,
     },
   },
   'behavior-chart': {
     nav: 'tool-c',
     title: 'Classroom Behavior Chart — The Teacher Tools',
-    description: 'A free clip-up / clip-down classroom behavior chart to track student conduct in real time. Move students between levels and reinforce positive behavior. No sign-up.',
+    description: 'A clip-up, clip-down behavior chart for tracking student conduct through the school day.',
     extraScripts: ['js/behavior.js'],
     seo: {
       h1: 'Classroom Behavior Chart',
       body: `
-        <p>The <strong>Behavior Chart</strong> helps you track and reinforce conduct throughout the day.
-        Move students up for positive choices or down when reminders are needed — all visible to the
-        class on your projector.</p>
+        <p>The <strong>Behavior Chart</strong> is a digital clip chart for tracking conduct through the
+        day. Move students up for positive choices or down when a reminder is needed, with every level
+        visible on the board.</p>
         <h2>How it works</h2>
         <ul>
-          <li>Add your students and place them on the starting level.</li>
+          <li>Add your students to the starting level.</li>
           <li>Tap to move a student up or down as behavior changes.</li>
-          <li>Use the color levels to give instant, visual feedback.</li>
+          <li>Use the colored levels for instant, visual feedback.</li>
         </ul>
-        <h2>Encourage positive behavior</h2>
-        <p>A clear, visual behavior system helps students self-regulate and makes expectations obvious.
-        Free to use, with nothing to install.</p>`,
+        <p>A clear, shared system helps students notice and manage their own behavior.</p>`,
     },
   },
   'good-noodles': {
     nav: 'tool-d',
     title: 'Good Noodles Reward Chart — The Teacher Tools',
-    description: 'A free Good Noodles reward board to celebrate students who make great choices. Add noodles for positive behavior and motivate your whole class. No sign-up required.',
+    description: 'A playful Good Noodles reward board for recognizing students who make positive choices.',
     extraScripts: ['js/goodnoodles.js'],
     seo: {
       h1: 'Good Noodles Reward Chart',
       body: `
-        <p>The <strong>Good Noodles</strong> board is a cheerful reward chart that celebrates students
-        who make great choices. Award a noodle for kindness, effort and good behavior to motivate the
-        whole class.</p>
-        <h2>Using the Good Noodles board</h2>
+        <p>The <strong>Good Noodles</strong> board is a reward chart that celebrates students who make
+        great choices. Hand out a noodle for kindness, effort or focus to motivate the whole class.</p>
+        <h2>How to use it</h2>
         <ul>
           <li>Add each student to the board.</li>
-          <li>Give a "good noodle" when you catch them doing the right thing.</li>
-          <li>Watch positive behavior spread as students aim for recognition.</li>
+          <li>Award a good noodle when you catch them doing the right thing.</li>
+          <li>Watch positive behavior spread as others join in.</li>
         </ul>
-        <h2>Positive reinforcement made fun</h2>
-        <p>Visual, playful and instantly rewarding — a simple way to build a positive classroom culture,
-        completely free.</p>`,
+        <p>It turns positive reinforcement into something students can see and aim for.</p>`,
     },
   },
   timer: {
     nav: 'timer',
-    title: 'Classroom Timer — Free Online Countdown Timer for Teachers',
-    description: 'A free, large classroom countdown timer for lessons, tests, transitions and brain breaks. Easy to read across the room with a clear alarm. No sign-up required.',
+    title: 'Classroom Timer — Online Countdown Timer for Teachers',
+    description: 'A large, easy-to-read classroom countdown timer for lessons, tests, transitions and brain breaks.',
     extraScripts: ['js/timer.js'],
     seo: {
       h1: 'Classroom Timer',
       body: `
-        <p>The <strong>Classroom Timer</strong> is a big, easy-to-read countdown timer for lessons,
-        tests, transitions and brain breaks. Set the time, hit start, and the whole class can see the
-        seconds tick down from across the room.</p>
-        <h2>Perfect for</h2>
+        <p>The <strong>Classroom Timer</strong> is a big, high-contrast countdown the whole class can
+        read from across the room. Set the time, press start, and watch the seconds tick down.</p>
+        <h2>Good for</h2>
         <ul>
           <li>Timed tests and writing prompts.</li>
-          <li>Smooth transitions between activities.</li>
-          <li>Brain breaks, clean-up time and group rotations.</li>
+          <li>Transitions between activities.</li>
+          <li>Brain breaks, clean-up and group rotations.</li>
         </ul>
-        <h2>Clear and distraction-free</h2>
-        <p>A large display and a gentle alarm keep your class on track without fuss. Free, online, and
-        works on any projector or device.</p>`,
+        <p>A gentle alarm signals time is up without disrupting the room.</p>`,
     },
   },
 };

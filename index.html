@@ -268,9 +268,6 @@
         </p>
         <div class="flex flex-wrap gap-4 pt-4">
           <a href="#tools" class="bg-secondary-container text-on-secondary-fixed px-10 py-4 rounded-xl font-bold text-lg hover:translate-y-[-2px] shadow-lg shadow-secondary-container/20 transition-all inline-block">Explore All Tools</a>
-          <button class="flex items-center gap-2 border border-outline-variant px-8 py-4 rounded-xl font-bold text-lg hover:bg-surface-container transition-all" id="play-tour-btn">
-            <span class="material-symbols-outlined text-[22px]">play_circle</span> Play Tour
-          </button>
         </div>
       </div>
 
@@ -368,7 +365,6 @@
         <div class="space-y-6">
           <h3 class="font-label-md uppercase tracking-[0.2em] text-on-surface opacity-60">More</h3>
           <ul class="space-y-4 text-on-surface-variant font-semibold">
-            <li><button class="hover:text-primary transition-colors" onclick="openTour(0)">Take the Tour</button></li>
             <li><button class="hover:text-primary transition-colors" id="footerClassesBtn">Saved Classes</button></li>
             <li><a class="hover:text-primary transition-colors" href="https://ko-fi.com/kago1" target="_blank" rel="noopener">Support on Ko-fi</a></li>
           </ul>
@@ -376,35 +372,6 @@
       </div>
     </div>
   </footer>
-
-  <!-- ═══════════════════════════ TOUR MODAL ═══════════════════════════ -->
-  <div id="tourModal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4">
-    <div class="absolute inset-0 bg-ink/70" data-tour-close></div>
-    <div class="relative bg-surface rounded-[2rem] border border-outline-variant shadow-2xl max-w-3xl w-full p-6 md:p-10 animate-fade-in">
-      <div class="flex items-center justify-between mb-6">
-        <span class="inline-flex items-center gap-2 bg-secondary-fixed text-on-secondary-fixed px-4 py-1.5 rounded-full font-label-sm uppercase tracking-widest" id="tourStepLabel">Tour 1 / 5</span>
-        <button class="w-10 h-10 rounded-full bg-surface-container hover:bg-surface-container-highest flex items-center justify-center transition-colors" data-tour-close aria-label="Close tour">
-          <span class="material-symbols-outlined">close</span>
-        </button>
-      </div>
-
-      <div id="tourMedia" class="aspect-video rounded-2xl overflow-hidden bg-surface-container border border-outline-variant mb-6 flex items-center justify-center"></div>
-
-      <h3 class="font-headline-md text-headline-md text-ink mb-2" id="tourTitle"></h3>
-      <p class="font-body-md text-on-surface-variant mb-8" id="tourDesc"></p>
-
-      <div class="flex flex-wrap items-center justify-between gap-4">
-        <div class="flex items-center gap-2" id="tourDots"></div>
-        <div class="flex items-center gap-3">
-          <a id="tourOpenLink" href="#" class="font-label-md text-primary font-bold uppercase tracking-widest inline-flex items-center gap-1 hover:gap-2 transition-all mr-2">
-            Open Tool <span class="material-symbols-outlined text-sm">open_in_new</span>
-          </a>
-          <button id="tourPrev" class="px-5 py-2.5 rounded-lg border border-outline-variant font-bold hover:bg-surface-container transition-colors disabled:opacity-40 disabled:pointer-events-none">Back</button>
-          <button id="tourNext" class="px-5 py-2.5 rounded-lg bg-primary text-on-primary font-bold hover:brightness-110 transition-all">Next</button>
-        </div>
-      </div>
-    </div>
-  </div>
 
   <!-- ═══════════════════════════ SAVED CLASSES MODAL ═══════════════════════════ -->
   <div id="classesModal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4">
@@ -430,24 +397,6 @@
   <script src="js/profile.js"></script>
 
   <script>
-    /* ════════════════════════════════════════════════
-       TOUR VIDEOS  —  ADD YOUR VIDEO FILES HERE
-       ────────────────────────────────────────────────
-       1. Drop your video files into the  /videos  folder
-          (e.g.  videos/student-picker.mp4 ).
-       2. Replace  null  below with the path, e.g.:
-             'student-picker': 'videos/student-picker.mp4',
-       Any entry left as null (or whose file is missing)
-       shows a friendly placeholder instead.
-       ════════════════════════════════════════════════ */
-    const TOUR_VIDEOS = {
-      'student-picker':   null,   // e.g. 'videos/student-picker.mp4'
-      'seating-arranger': null,   // e.g. 'videos/seating-arranger.mp4'
-      'behavior-chart':   null,   // e.g. 'videos/behavior-chart.mp4'
-      'good-noodles':     null,   // e.g. 'videos/good-noodles.mp4'
-      'timer':            null,   // e.g. 'videos/timer.mp4'
-    };
-
     /* ─── The tools (links point at the real pages) ─── */
     const TOOLS = [
       {
@@ -558,10 +507,6 @@
               Launch Tool
               <span class="material-symbols-outlined group-hover:translate-x-2 transition-transform">arrow_forward</span>
             </a>
-            <button onclick="openTour(${TOOLS.findIndex(x => x.slug === t.slug)})"
-              class="border border-outline-variant px-8 py-5 rounded-xl font-bold text-lg inline-flex items-center gap-2 hover:bg-surface-container transition-all bg-surface">
-              <span class="material-symbols-outlined text-[22px]">play_circle</span> Watch
-            </button>
           </div>
         </div>
         <div class="bg-surface-container rounded-[2rem] p-12 aspect-square flex-col items-center justify-center relative overflow-hidden shadow-inner hidden lg:flex">
@@ -614,110 +559,12 @@
           </span>
         </a>`);
 
-      cards.push(`
-        <button onclick="openTour(0)" class="bg-surface-variant p-10 rounded-[2.5rem] border-2 border-dashed border-manila-accent hover:border-primary transition-all hover:shadow-2xl flex flex-col text-left group">
-          <div class="w-16 h-16 bg-manila-accent/40 text-tertiary rounded-2xl flex items-center justify-center mb-8">
-            <span class="material-symbols-outlined text-4xl">play_circle</span>
-          </div>
-          <h3 class="font-headline-md text-headline-md text-ink mb-5">Take the Tour</h3>
-          <p class="font-body-md text-on-surface-variant flex-grow mb-8 leading-relaxed">New here? Watch a quick walkthrough of every tool and find the perfect fit for your classroom.</p>
-          <span class="font-label-md text-primary font-black uppercase tracking-widest inline-flex items-center gap-2 group-hover:gap-4 transition-all">
-            Play Tour <span class="material-symbols-outlined text-sm">play_arrow</span>
-          </span>
-        </button>`);
-
       host.innerHTML = cards.join('');
     }
 
     /* ═══════════ Footer links ═══════════ */
     document.getElementById('footer-tool-links').innerHTML = TOOLS.map(t =>
       `<li><a class="hover:text-primary transition-colors" href="${t.slug}/">${t.label}</a></li>`).join('');
-
-    /* ═══════════════════════════════════════════════
-       TOUR  —  video walkthrough with placeholders
-       ═══════════════════════════════════════════════ */
-    let tourIdx = 0;
-
-    function tourPlaceholderHTML(t) {
-      return `
-        <div class="w-full h-full flex flex-col items-center justify-center gap-4 bg-manila-accent/20 border-2 border-dashed border-manila-accent rounded-2xl m-4 p-6 text-center">
-          <span class="material-symbols-outlined text-6xl text-manila-accent">${t.icon}</span>
-          <p class="font-headline-md text-ink text-lg">Video coming soon</p>
-          <p class="font-body-md text-on-surface-variant text-sm max-w-sm">
-            Drop <code class="bg-surface-container-highest px-1.5 py-0.5 rounded">videos/${t.slug}.mp4</code> into the site folder
-            and point <code class="bg-surface-container-highest px-1.5 py-0.5 rounded">TOUR_VIDEOS</code> at it to show the walkthrough here.
-          </p>
-        </div>`;
-    }
-
-    function renderTourStep() {
-      const t = TOOLS[tourIdx];
-      const media = document.getElementById('tourMedia');
-
-      document.getElementById('tourStepLabel').textContent = `Tour ${tourIdx + 1} / ${TOOLS.length}`;
-      document.getElementById('tourTitle').textContent = t.title;
-      document.getElementById('tourDesc').textContent = t.short;
-      document.getElementById('tourOpenLink').href = t.slug + '/';
-      document.getElementById('tourPrev').disabled = tourIdx === 0;
-      document.getElementById('tourNext').textContent = tourIdx === TOOLS.length - 1 ? 'Finish' : 'Next';
-
-      document.getElementById('tourDots').innerHTML = TOOLS.map((x, i) => `
-        <button class="w-3 h-3 rounded-full transition-all ${i === tourIdx ? 'bg-primary scale-110' : 'bg-outline-variant hover:bg-outline'}"
-          onclick="goTourStep(${i})" aria-label="Go to step ${i + 1}"></button>`).join('');
-
-      media.innerHTML = '';
-      const src = TOUR_VIDEOS[t.slug];
-      if (src) {
-        const video = document.createElement('video');
-        video.src = src;
-        video.controls = true;
-        video.autoplay = true;
-        video.muted = true;
-        video.playsInline = true;
-        video.className = 'w-full h-full object-contain bg-ink';
-        /* file missing or unplayable → fall back to the placeholder */
-        video.addEventListener('error', () => { media.innerHTML = tourPlaceholderHTML(t); });
-        media.appendChild(video);
-      } else {
-        media.innerHTML = tourPlaceholderHTML(t);
-      }
-    }
-
-    function stopTourVideo() {
-      const v = document.querySelector('#tourMedia video');
-      if (v) v.pause();
-    }
-
-    function openTour(idx) {
-      tourIdx = idx || 0;
-      const m = document.getElementById('tourModal');
-      m.classList.remove('hidden');
-      m.classList.add('flex');
-      document.body.style.overflow = 'hidden';
-      renderTourStep();
-    }
-
-    function closeTour() {
-      stopTourVideo();
-      const m = document.getElementById('tourModal');
-      m.classList.add('hidden');
-      m.classList.remove('flex');
-      document.body.style.overflow = '';
-    }
-
-    function goTourStep(i) {
-      stopTourVideo();
-      tourIdx = i;
-      renderTourStep();
-    }
-
-    document.getElementById('play-tour-btn').addEventListener('click', () => openTour(0));
-    document.getElementById('tourPrev').addEventListener('click', () => { if (tourIdx > 0) goTourStep(tourIdx - 1); });
-    document.getElementById('tourNext').addEventListener('click', () => {
-      if (tourIdx < TOOLS.length - 1) goTourStep(tourIdx + 1);
-      else closeTour();
-    });
-    document.querySelectorAll('[data-tour-close]').forEach(el => el.addEventListener('click', closeTour));
 
     /* ═══════════════════════════════════════════════
        SAVED CLASSES  —  same TTClasses store the tools
@@ -809,7 +656,6 @@
     /* ═══════════ Escape closes whichever modal is open ═══════════ */
     document.addEventListener('keydown', e => {
       if (e.key !== 'Escape') return;
-      if (!document.getElementById('tourModal').classList.contains('hidden')) closeTour();
       if (!document.getElementById('classesModal').classList.contains('hidden')) closeClasses();
     });
 
