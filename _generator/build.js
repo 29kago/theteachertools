@@ -43,15 +43,83 @@ const PAGES = {
     seo: {
       h1: 'Random Student Picker Wheel',
       body: `
-        <p>The <strong>Random Student Picker</strong> is a spinning name wheel that helps you call on
-        students fairly instead of always hearing from the same few hands.</p>
-        <h2>How to use it</h2>
+        <p>The <strong>Random Student Picker</strong> is a free spinning name wheel that helps you call
+        on students fairly, instead of always hearing from the same eager few. Type or paste your class
+        list, give the wheel a spin, and let chance decide who answers next. Because every name has an
+        equal shot, the wheel takes the pressure off you and keeps the whole class paying attention —
+        anyone could be next.</p>
+        <p>Teachers reach for a random name picker to cold-call during discussions, choose a line leader,
+        hand out classroom jobs, build surprise groups, or simply add a moment of fun and suspense to a
+        quiet lesson. It runs in any web browser on an interactive whiteboard, laptop, tablet or phone,
+        with no app to install and no account to create.</p>
+
+        <h2>How to use the student picker wheel</h2>
         <ol>
-          <li>Paste your class list into the box, one name per line.</li>
-          <li>Click the wheel to spin.</li>
-          <li>Remove the chosen name so nobody gets picked twice.</li>
+          <li>Type or paste your students' names into the box, one name per line.</li>
+          <li>Click or tap the wheel to spin it — it slows down naturally and lands on one name.</li>
+          <li>Read out the chosen name, which appears in large text so the back row can see it too.</li>
+          <li>Tap "Remove Selection" to take that student off the wheel so nobody is picked twice in a row.</li>
         </ol>
-        <p>It works on interactive whiteboards, tablets and phones, with nothing to install.</p>`,
+
+        <h2>Ways to use it in your classroom</h2>
+        <ul>
+          <li><strong>Cold-calling:</strong> pick a student to answer so participation does not depend on raised hands.</li>
+          <li><strong>Random groups:</strong> spin repeatedly to sort students into fair pairs or teams.</li>
+          <li><strong>Classroom jobs:</strong> choose who leads the line, hands out books or waters the plants.</li>
+          <li><strong>Order of turns:</strong> decide who presents first, reads next or picks the class read-aloud.</li>
+          <li><strong>Games and review:</strong> add suspense to quizzes, vocabulary races and brain breaks.</li>
+        </ul>
+
+        <h2>Why a random picker helps</h2>
+        <p>Calling on students at random spreads participation more evenly and gently nudges quieter
+        students into the conversation. Because the choice is clearly out of your hands, it also feels
+        fairer to students — there are no accusations of favouritism, and the suspense of the spin keeps
+        everyone engaged and ready to respond. Used regularly, a name wheel helps build a classroom
+        culture where every voice is expected and valued.</p>
+
+        <h2>Tips for fair picking</h2>
+        <ul>
+          <li>Keep every name on the wheel for a true random chance, or remove names as you go so each student is picked once before anyone repeats.</li>
+          <li>Pair the picker with a few seconds of "think time" so students rehearse an answer before a name is called.</li>
+          <li>Offer a "phone a friend" or pass option to keep cold-calling supportive and low-stress.</li>
+          <li>Save your class list so you can reopen the wheel each day without retyping names.</li>
+        </ul>
+
+        <h2>Common mistakes to avoid</h2>
+        <ul>
+          <li><strong>Naming before thinking.</strong> If you spin and read the name before posing the question, the rest of the class switches off. Ask the question, give think time, then spin.</li>
+          <li><strong>Never removing names.</strong> Left on its own, randomness will pick some students twice before others get a turn. Use Remove Selection to cycle fairly through everyone.</li>
+          <li><strong>Turning it into a "gotcha".</strong> Spinning to catch a daydreaming student makes the wheel feel like a punishment. Keep it warm and predictable.</li>
+          <li><strong>No safety net.</strong> Allow a pass or a "phone a friend" so being chosen never feels like a trap.</li>
+        </ul>
+
+        <h2>Variations to try</h2>
+        <ul>
+          <li><strong>Group maker:</strong> spin repeatedly, removing each name, to build random pairs or teams.</li>
+          <li><strong>Job assigner:</strong> paste classroom jobs or roles instead of names and spin to hand them out.</li>
+          <li><strong>Turn order:</strong> spin to decide who presents, reads or answers first.</li>
+          <li><strong>Table picker:</strong> put group names (Table 1, Red Team) on the wheel to choose a whole table at once.</li>
+          <li><strong>Double spin:</strong> spin once for a student and once for a question number to add an extra layer of suspense to review games.</li>
+        </ul>
+
+        <h2>Frequently asked questions</h2>
+        <h3>Is the student picker really random?</h3>
+        <p>Yes. Each spin selects a name independently, so every student on the wheel has the same chance
+        of being chosen on any given spin. If you would rather guarantee everyone is picked once before
+        anyone repeats, use the Remove Selection button after each spin.</p>
+        <h3>How many names can I add?</h3>
+        <p>You can add a whole class and more — the wheel resizes its segments automatically as you add or
+        remove names. For very long lists the labels become smaller, but the spin and selection work the
+        same way.</p>
+        <h3>Do I need an account or have to pay?</h3>
+        <p>No. The Teacher Tools student picker is completely free, with no sign-up, no download and no ads
+        interrupting the wheel. Just open the page and start spinning.</p>
+        <h3>Will it remember my class list?</h3>
+        <p>Your list stays in the box while the page is open, and you can save classes on your device to
+        load them again later. Nothing is sent to a server, so your students' names stay private to you.</p>
+        <h3>Can I use it on a smartboard or tablet?</h3>
+        <p>Absolutely. The wheel is touch-friendly and scales to fit interactive whiteboards, projectors,
+        tablets and phones, so you can spin it however your classroom is set up.</p>`,
     },
   },
   'seating-arranger': {
@@ -62,15 +130,85 @@ const PAGES = {
     seo: {
       h1: 'Classroom Seating Chart Maker',
       body: `
-        <p>The <strong>Seating Arranger</strong> lets you map your classroom and place students at desks
-        in a few minutes. Arrange furniture to match your real room, then assign or shuffle seats.</p>
+        <p>The <strong>Seating Chart Maker</strong> is a free drag-and-drop tool for mapping your
+        classroom and placing students at their desks. Arrange desks, tables and other furniture to match
+        your real room, then assign students by hand or shuffle them into seats at random. A clear seating
+        chart helps you learn names quickly, manage behaviour, balance groups and hand a substitute
+        teacher everything they need at a glance.</p>
+        <p>Whether you teach in neat rows, clustered pods or a flexible layout that changes by the week,
+        you can build it here in a few minutes and reuse it all year. Everything runs in your browser —
+        no installation, no account and nothing to print unless you want to.</p>
+
+        <h2>How to make a seating chart</h2>
+        <ol>
+          <li>Add desks to the canvas and drag them into the layout that matches your classroom.</li>
+          <li>Type or paste your class list so the tool knows who needs a seat.</li>
+          <li>Assign students to desks by hand, or shuffle them into the seats at random.</li>
+          <li>Rearrange any time by dragging desks or students, then save the layout to reuse later.</li>
+        </ol>
+
         <h2>What you can do</h2>
         <ul>
-          <li>Drag desks and tables into any layout.</li>
-          <li>Auto-assign students or shuffle them at random.</li>
-          <li>Save a layout and reuse it for each class.</li>
+          <li>Drag desks and tables into rows, groups, a U-shape or any layout you like.</li>
+          <li>Auto-assign your whole class to seats in one click, or place key students by hand.</li>
+          <li>Shuffle seats randomly for a fresh arrangement or to break up chatty pairs.</li>
+          <li>Save a layout for each class and reload it whenever you need it.</li>
         </ul>
-        <p>Rearranging for group work or a fresh start takes only a few clicks.</p>`,
+
+        <h2>Ideas for seating arrangements</h2>
+        <ul>
+          <li><strong>Rows</strong> for tests and direct instruction, when you want focus and clear sightlines.</li>
+          <li><strong>Pods or clusters</strong> for group projects, discussion and collaborative work.</li>
+          <li><strong>A U-shape or horseshoe</strong> for seminars and whole-class conversation.</li>
+          <li><strong>Strategic pairs</strong> that seat a supportive partner beside a student who needs one.</li>
+        </ul>
+
+        <h2>Why use a seating chart</h2>
+        <p>A thoughtful seating plan does more than fill desks. It helps you learn and remember names at
+        the start of the year, position students who benefit from being near the front or away from
+        distractions, and balance friendship groups so collaboration stays productive. When you are away,
+        a clear chart means a substitute can take attendance and keep your routines running smoothly.</p>
+
+        <h2>Tips for a smoother classroom</h2>
+        <ul>
+          <li>Refresh your seating chart every few weeks to give students new partners and a change of view.</li>
+          <li>Keep walkways clear so you can reach every desk during independent work.</li>
+          <li>Place students with hearing or vision needs where they can see and hear best.</li>
+          <li>Save more than one layout — one for tests, one for group work — and switch in seconds.</li>
+        </ul>
+
+        <h2>Common mistakes to avoid</h2>
+        <ul>
+          <li><strong>Blocking your own pathways.</strong> If you cannot reach every desk in a few steps, you lose the power of proximity. Keep walkways clear.</li>
+          <li><strong>Setting it and forgetting it.</strong> A layout that fit in September may not suit the class that has formed by November. Revisit it every few weeks.</li>
+          <li><strong>Moving students only as punishment.</strong> If the one time you change a seat is to shame someone, seating becomes a battleground. Treat changes as routine.</li>
+          <li><strong>Ignoring access needs.</strong> Place students with hearing or vision needs where they can see and hear best, rather than wherever a gap is left.</li>
+        </ul>
+
+        <h2>Variations to try</h2>
+        <ul>
+          <li><strong>Layouts by activity:</strong> save one chart for tests and another for group work, then switch in seconds.</li>
+          <li><strong>Random mixer:</strong> shuffle students for a fresh arrangement or a start-of-term icebreaker.</li>
+          <li><strong>Beyond the classroom:</strong> plan an exam hall, a computer lab, an assembly or a field-trip bus.</li>
+          <li><strong>Substitute-ready:</strong> keep a clear chart on hand so a relief teacher can take attendance at a glance.</li>
+          <li><strong>Name practice:</strong> use your saved chart to quiz yourself on names in the first weeks of the year.</li>
+        </ul>
+
+        <h2>Frequently asked questions</h2>
+        <h3>Can I match my real classroom layout?</h3>
+        <p>Yes. You drag each desk into place, so you can recreate rows, pods, a horseshoe or any custom
+        arrangement, including the position of your teacher desk and other furniture.</p>
+        <h3>Can the tool assign students for me?</h3>
+        <p>It can. Add your class list and use the shuffle option to drop everyone into seats at random, or
+        place specific students yourself and let the tool fill in the rest.</p>
+        <h3>Will my seating chart be saved?</h3>
+        <p>You can save layouts on your device and reload them later, so you do not have to rebuild your
+        chart every morning. Your class lists stay private on your own computer.</p>
+        <h3>Is it free to use?</h3>
+        <p>Completely free. There is no sign-up, no download and no limit on how many charts you create.</p>
+        <h3>Can I use it for more than one class?</h3>
+        <p>Yes. Save a separate layout for each class or period and switch between them whenever your
+        groups change.</p>`,
     },
   },
   'behavior-chart': {
@@ -81,16 +219,79 @@ const PAGES = {
     seo: {
       h1: 'Classroom Behavior Chart',
       body: `
-        <p>The <strong>Behavior Chart</strong> is a digital clip chart for tracking conduct through the
-        day. Move students up for positive choices or down when a reminder is needed, with every level
-        visible on the board.</p>
-        <h2>How it works</h2>
+        <p>The <strong>Behavior Chart</strong> is a free digital clip chart for tracking how your class is
+        doing through the day. Students start in the middle and "clip up" for positive choices like
+        kindness, effort and focus, or "clip down" when they need a reminder to get back on track. Because
+        every level is colour-coded and visible on the board, students get instant, low-key feedback and
+        learn to manage their own behaviour.</p>
+        <p>A shared chart on the projector turns behaviour management into something calm and consistent.
+        Instead of repeating warnings, you can simply move a name and let the visual do the talking — and
+        celebrate the students who climb to the top.</p>
+
+        <h2>How the behavior chart works</h2>
+        <ol>
+          <li>Add your students to the starting level in the middle of the chart.</li>
+          <li>Tap a student to move them up for good choices, or down when a reminder is needed.</li>
+          <li>Use the colour-coded levels so the whole class can see where everyone stands at a glance.</li>
+          <li>Reset the chart at the end of the day so everyone starts fresh tomorrow.</li>
+        </ol>
+
+        <h2>Why teachers use a clip chart</h2>
         <ul>
-          <li>Add your students to the starting level.</li>
-          <li>Tap to move a student up or down as behavior changes.</li>
-          <li>Use the colored levels for instant, visual feedback.</li>
+          <li><strong>Instant feedback:</strong> a quick move up or down responds to behaviour in the moment, without a lecture.</li>
+          <li><strong>Positive focus:</strong> students can climb for good choices, not just drop for mistakes.</li>
+          <li><strong>Visual and consistent:</strong> colour-coded levels make expectations clear to every learner.</li>
+          <li><strong>Self-management:</strong> students watch their own progress and learn to course-correct.</li>
         </ul>
-        <p>A clear, shared system helps students notice and manage their own behavior.</p>`,
+
+        <h2>Tips for using it well</h2>
+        <ul>
+          <li>Catch students being good — clip up often so the chart rewards effort, not just flags slips.</li>
+          <li>Pair each move with a few quiet words so students know exactly what earned it.</li>
+          <li>Let students clip back up after a reminder, so a low moment is never the end of the day.</li>
+          <li>Reset every morning so no one carries yesterday's tough day into a new start.</li>
+        </ul>
+
+        <h2>A balanced approach to behaviour</h2>
+        <p>A clip chart works best as one part of a warm, encouraging classroom rather than the whole
+        system. Keep the emphasis on positive recognition, give quiet reminders before moving anyone down,
+        and talk privately with students who struggle so the chart never feels like public shaming. Used
+        kindly and consistently, it gives children a clear, visual way to understand expectations and take
+        pride in their progress.</p>
+
+        <h2>Common mistakes to avoid</h2>
+        <ul>
+          <li><strong>Only ever clipping down.</strong> A chart that records mistakes but rarely rewards good choices becomes a shame board. Clip up often.</li>
+          <li><strong>Moving a name silently.</strong> A change with no explanation teaches nothing. Pair each move with a few quiet words.</li>
+          <li><strong>No way back up.</strong> If a student cannot recover after a reminder, the chart removes their incentive to improve. Always let them clip back up.</li>
+          <li><strong>Carrying yesterday over.</strong> Starting a child at the bottom because of a tough day yesterday denies them a fresh start. Reset daily.</li>
+          <li><strong>Public shaming.</strong> A few students find any public display humiliating. Use a quiet check-in instead when that is the case.</li>
+        </ul>
+
+        <h2>Variations to try</h2>
+        <ul>
+          <li><strong>Whole-class level:</strong> track the whole group toward a shared goal instead of, or alongside, individuals.</li>
+          <li><strong>Pair with rewards:</strong> combine the chart with the <a href="/good-noodles/">Good Noodles board</a> so climbing earns recognition.</li>
+          <li><strong>Match the cadence:</strong> reset daily for younger classes, or per lesson for secondary timetables.</li>
+          <li><strong>Tie the top to a privilege:</strong> connect the highest level to a small, simple reward students can aim for.</li>
+          <li><strong>Private mode:</strong> for sensitive students, track quietly with a one-to-one check-in rather than on the big screen.</li>
+        </ul>
+
+        <h2>Frequently asked questions</h2>
+        <h3>How many levels does the chart have?</h3>
+        <p>The chart uses several colour-coded levels above and below a neutral starting point, so there is
+        room to recognise great choices and to flag when a student needs a reminder.</p>
+        <h3>Can students move back up after clipping down?</h3>
+        <p>Yes, and they should. Letting students clip back up after they correct their behaviour keeps the
+        chart encouraging and shows that every choice is a fresh chance.</p>
+        <h3>Does it save the day's results?</h3>
+        <p>The chart is designed to be reset each day so students start fresh. It runs in your browser and
+        keeps your class information on your own device.</p>
+        <h3>Is the behavior chart free?</h3>
+        <p>Yes. It is completely free to use, with no account, no download and no cost.</p>
+        <h3>Can I use it on a projector or smartboard?</h3>
+        <p>Definitely. The colour-coded levels are designed to be read from across the room, making it
+        ideal for an interactive whiteboard or projector.</p>`,
     },
   },
   'good-noodles': {
@@ -101,15 +302,78 @@ const PAGES = {
     seo: {
       h1: 'Good Noodles Reward Chart',
       body: `
-        <p>The <strong>Good Noodles</strong> board is a reward chart that celebrates students who make
-        great choices. Hand out a noodle for kindness, effort or focus to motivate the whole class.</p>
-        <h2>How to use it</h2>
+        <p>The <strong>Good Noodles</strong> board is a free, playful reward chart that celebrates students
+        who make great choices. When you catch a student being kind, working hard or staying focused, give
+        them a "good noodle" and watch the positive behaviour spread as classmates aim to join the list.
+        It is a cheerful, low-pressure way to put the spotlight on what is going right in your room.</p>
+        <p>Positive reinforcement works best when students can see it, and the Good Noodles board makes
+        recognition visible and fun. Display it on your projector or smartboard, hand out noodles
+        throughout the day, and use it to build the warm, encouraging classroom culture you want.</p>
+
+        <h2>How to use the Good Noodles chart</h2>
+        <ol>
+          <li>Add each student to the board so everyone has a place on the chart.</li>
+          <li>Award a good noodle the moment you catch a student doing the right thing.</li>
+          <li>Call out the positive choice so the whole class knows what earned it.</li>
+          <li>Celebrate students who fill up their noodles, then reset to keep the encouragement going.</li>
+        </ol>
+
+        <h2>What to reward</h2>
         <ul>
-          <li>Add each student to the board.</li>
-          <li>Award a good noodle when you catch them doing the right thing.</li>
-          <li>Watch positive behavior spread as others join in.</li>
+          <li>Kindness and helping a classmate without being asked.</li>
+          <li>Effort and persistence on tricky work.</li>
+          <li>Focus, good listening and following directions the first time.</li>
+          <li>Cleaning up, lining up calmly and other smooth transitions.</li>
         </ul>
-        <p>It turns positive reinforcement into something students can see and aim for.</p>`,
+
+        <h2>Why positive reinforcement works</h2>
+        <p>Children repeat the behaviour that gets noticed. By rewarding good choices out loud, the Good
+        Noodles board makes positive behaviour the centre of attention instead of misbehaviour, which
+        encourages the rest of the class to follow. Over time, that steady stream of recognition builds
+        students' confidence and helps a kind, hard-working classroom culture feel like the norm.</p>
+
+        <h2>Tips for getting the most from it</h2>
+        <ul>
+          <li>Spread the noodles around so every student has a real chance to be recognised.</li>
+          <li>Be specific — name the exact choice you are rewarding so others know what to copy.</li>
+          <li>Mix in whole-class noodles for moments when the room shines together.</li>
+          <li>Pair the board with a small reward when students reach a goal, like a sticker or choice time.</li>
+        </ul>
+
+        <h2>Common mistakes to avoid</h2>
+        <ul>
+          <li><strong>Rewarding only the usual stars.</strong> If the same few names always earn noodles, the rest of the class stops trying. Spread recognition deliberately.</li>
+          <li><strong>Vague praise.</strong> "Well done" teaches nothing. Name the exact choice so others know what to copy.</li>
+          <li><strong>Taking noodles away in anger.</strong> Stripping a hard-earned reward turns a positive board into a threat. Keep rewards and consequences separate.</li>
+          <li><strong>Leaning on prizes.</strong> Constant tangible rewards can crowd out students' own motivation. Let attention and praise do most of the work.</li>
+        </ul>
+
+        <h2>Variations to try</h2>
+        <ul>
+          <li><strong>Whole-class jar:</strong> collect noodles toward a shared class reward to build teamwork.</li>
+          <li><strong>Skill of the week:</strong> award noodles for one focus, such as kindness or perseverance, to highlight it.</li>
+          <li><strong>Peer nominations:</strong> let students nominate a classmate who helped them, building a culture of noticing good.</li>
+          <li><strong>Silent noodle:</strong> award one without stopping the lesson, then mention it later.</li>
+          <li><strong>Pair with tracking:</strong> use it alongside the <a href="/behavior-chart/">Behavior Chart</a> so encouragement and reminders work together.</li>
+        </ul>
+
+        <h2>Frequently asked questions</h2>
+        <h3>Where does the "Good Noodle" idea come from?</h3>
+        <p>"Good noodle" is a friendly, classic phrase teachers use to praise a well-behaved student. This
+        digital board turns that idea into a visible chart so the whole class can see and celebrate good
+        choices together.</p>
+        <h3>How many students can I add?</h3>
+        <p>You can add your entire class. Each student gets their own spot on the board, and you can award
+        noodles to as many of them as you like.</p>
+        <h3>Can I reset the board?</h3>
+        <p>Yes. Reset whenever you like — at the end of the day, the week, or once students reach a reward
+        — so the chart stays fresh and motivating.</p>
+        <h3>Is it free?</h3>
+        <p>Completely free, with no sign-up and no download. Just open the page and start rewarding good
+        choices.</p>
+        <h3>Does it work on a smartboard?</h3>
+        <p>Yes. The board is bright and easy to read on an interactive whiteboard or projector, so the
+        whole class can enjoy it together.</p>`,
     },
   },
   timer: {
@@ -120,15 +384,79 @@ const PAGES = {
     seo: {
       h1: 'Classroom Timer',
       body: `
-        <p>The <strong>Classroom Timer</strong> is a big, high-contrast countdown the whole class can
-        read from across the room. Set the time, press start, and watch the seconds tick down.</p>
-        <h2>Good for</h2>
+        <p>The <strong>Classroom Timer</strong> is a free, full-screen countdown the whole class can read
+        from across the room. Set the minutes, press start, and the large high-contrast digits count down
+        to zero, ending with a clear alarm. A visible timer keeps lessons moving, helps students pace
+        themselves and turns "five more minutes" into something everyone can see.</p>
+        <p>Use it for timed tests and writing prompts, smooth transitions between activities, brain breaks,
+        clean-up routines and group rotations. It runs in any browser on your projector, smartboard,
+        laptop or tablet — no app, no account and nothing to set up.</p>
+
+        <h2>How to use the classroom timer</h2>
+        <ol>
+          <li>Set the amount of time you need using the timer controls.</li>
+          <li>Press start, and the big digits begin counting down.</li>
+          <li>Keep teaching — students can glance up any time to see how long is left.</li>
+          <li>A clear alarm signals when time is up, then reset for the next activity.</li>
+        </ol>
+
+        <h2>Great for</h2>
         <ul>
-          <li>Timed tests and writing prompts.</li>
-          <li>Transitions between activities.</li>
-          <li>Brain breaks, clean-up and group rotations.</li>
+          <li>Timed tests, quizzes and writing prompts.</li>
+          <li>Transitions between activities and learning centres.</li>
+          <li>Brain breaks, movement breaks and calm-down time.</li>
+          <li>Clean-up routines, packing away and lining up.</li>
+          <li>Group rotations, stations and turn-taking in games.</li>
         </ul>
-        <p>A gentle alarm signals time is up without disrupting the room.</p>`,
+
+        <h2>Why a visible timer helps</h2>
+        <p>When students can see exactly how much time is left, they pace their own work, stay on task and
+        feel less anxious about deadlines. A shared countdown also cuts down on "how long do we have?"
+        questions, and the gentle alarm marks the end of an activity clearly so transitions are calmer and
+        quicker. For younger students especially, watching time tick down builds an early, concrete sense
+        of how long a few minutes really is.</p>
+
+        <h2>Tips for classroom timing</h2>
+        <ul>
+          <li>Give a little more time than you think you need; you can always end early.</li>
+          <li>Use short timers for transitions to keep the day's pace brisk and predictable.</li>
+          <li>Announce what happens when the timer ends so students know what to expect.</li>
+          <li>Add a quiet warning at the one-minute mark for smoother, less abrupt stops.</li>
+        </ul>
+
+        <h2>Common mistakes to avoid</h2>
+        <ul>
+          <li><strong>Timing everything.</strong> Deep thinking and rich discussion need room to breathe. Use the timer for pace and transitions, not to rush genuine struggle.</li>
+          <li><strong>Being inconsistent.</strong> If the alarm sometimes means "stop" and sometimes means nothing, it loses its power. Honour it every time.</li>
+          <li><strong>No warning before zero.</strong> An abrupt end catches students mid-thought. Give a quiet one-minute heads-up.</li>
+          <li><strong>Setting too little time.</strong> Constant overruns train students to ignore the clock. Pad it slightly; you can always end early.</li>
+        </ul>
+
+        <h2>Variations to try</h2>
+        <ul>
+          <li><strong>Beat-the-clock tidy-up:</strong> a 60-second countdown turns packing away into a brisk routine.</li>
+          <li><strong>Station rotations:</strong> a shared timer keeps every group moving together so no station runs long.</li>
+          <li><strong>Retrieval races:</strong> short, sharp timers add energy to quizzes and quick-write warm-ups.</li>
+          <li><strong>Focus sprints:</strong> longer countdowns create quiet, distraction-free work blocks for older students.</li>
+          <li><strong>Brain breaks:</strong> let the timer, not you, call everyone back from a two-minute movement break.</li>
+        </ul>
+
+        <h2>Frequently asked questions</h2>
+        <h3>Can the whole class see the timer?</h3>
+        <p>Yes. The digits are large and high-contrast, designed to be read from the back of the room on a
+        projector or interactive whiteboard.</p>
+        <h3>Does it make a sound when time is up?</h3>
+        <p>It ends with a clear alarm so you and your students know the moment time runs out, without you
+        having to watch the clock.</p>
+        <h3>Can I set any amount of time?</h3>
+        <p>You can set the timer for anything from a quick transition to a full class period, then reset
+        and reuse it for the next activity.</p>
+        <h3>Is the timer free?</h3>
+        <p>Completely free, with no account, no download and no cost. Open the page and it is ready to
+        use.</p>
+        <h3>Will it work on my smartboard or tablet?</h3>
+        <p>Yes. The timer scales to fit projectors, interactive whiteboards, laptops, tablets and phones,
+        so it fits whatever device runs your classroom.</p>`,
     },
   },
 };
@@ -164,6 +492,7 @@ function head(page, base) {
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,700;9..144,900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="${base}css/style.css">
   <link rel="stylesheet" href="${base}css/theme.css">
+  <link rel="stylesheet" href="${base}css/pages.css">
   <link id="gfont-Poppins" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;display=swap">
   <link id="gfont-Architects-Daughter" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Architects+Daughter:wght@300;400;500;600;700&amp;display=swap">
   <link id="gfont-Permanent-Marker" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Permanent+Marker:wght@300;400;500;600;700&amp;display=swap">
@@ -378,6 +707,11 @@ ${cards}
   return `  <section class="tool-seo">
     <h1>${page.seo.h1}</h1>
 ${page.seo.body.trim().split('\n').map(l => '    ' + l.trim()).join('\n')}
+    <div class="tt-ad">
+      <div class="tt-ad-label">Advertisement</div>
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6623585309429140" data-ad-slot="2577114334" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
     <p><a href="../">← Back to all Teacher Tools</a></p>
   </section>`;
 }
@@ -413,6 +747,56 @@ const SETTINGS = `  <!-- ══════════════════�
       </div>
     </div>
   </aside>`;
+
+const FOOTER = `  <!-- ═══════════════════════════ FOOTER ═══════════════════════════ -->
+  <footer class="tt-footer">
+    <div class="tt-footer-grid">
+      <div class="tt-footer-brand">
+        <a class="tt-fb-row" href="/">
+          <img src="/Logo.png" alt="">
+          <span>The Teacher Tools</span>
+        </a>
+        <p>Free, projector-friendly classroom tools and practical teaching resources. No sign-up, no download — just open and teach.</p>
+      </div>
+      <div>
+        <h4>Tools</h4>
+        <ul>
+          <li><a href="/student-picker/">Student Picker</a></li>
+          <li><a href="/seating-arranger/">Seating Chart Maker</a></li>
+          <li><a href="/behavior-chart/">Behavior Chart</a></li>
+          <li><a href="/good-noodles/">Good Noodles</a></li>
+          <li><a href="/timer/">Classroom Timer</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="/resources/">All Articles</a></li>
+          <li><a href="/resources/classroom-management-strategies/">Classroom Management</a></li>
+          <li><a href="/resources/classroom-seating-arrangements/">Seating Arrangements</a></li>
+          <li><a href="/resources/attention-getting-signals/">Attention Signals</a></li>
+          <li><a href="/resources/positive-reinforcement-classroom/">Positive Reinforcement</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Site</h4>
+        <ul>
+          <li><a href="/about/">About</a></li>
+          <li><a href="/contact/">Contact</a></li>
+          <li><a href="/privacy/">Privacy Policy</a></li>
+          <li><a href="https://ko-fi.com/kago1" target="_blank" rel="noopener">Support on Ko-fi</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="tt-footer-bottom">
+      <p>&copy; 2026 The Teacher Tools. All rights reserved.</p>
+      <div class="tt-fb-links">
+        <a href="/privacy/">Privacy</a>
+        <a href="/contact/">Contact</a>
+        <a href="/about/">About</a>
+      </div>
+    </div>
+  </footer>`;
 
 function scripts(page, base) {
   const list = ['js/profile.js', 'js/main.js', ...(page.extraScripts || []), 'js/lang.js'];
@@ -456,6 +840,8 @@ function renderPage(pageKey) {
     '',
     seoSection(page),
     '',
+    FOOTER,
+    '',
     SETTINGS,
     '',
     scripts(page, base),
@@ -482,8 +868,26 @@ for (const pageKey of Object.keys(PAGES)) {
   writeFile(rel, renderPage(pageKey));
 }
 
+/* ─── Hand-maintained content pages + resource articles (not generated here,
+   but listed in the sitemap so they get crawled) ─── */
+const EXTRA_PAGES = [
+  'about/',
+  'contact/',
+  'privacy/',
+  'resources/',
+  'resources/classroom-management-strategies/',
+  'resources/classroom-seating-arrangements/',
+  'resources/attention-getting-signals/',
+  'resources/positive-reinforcement-classroom/',
+  'resources/cold-calling-students/',
+  'resources/classroom-timers-transitions/',
+];
+
 /* sitemap.xml */
-const urls = NAV.map(n => SITE + (n.slug ? n.slug + '/' : ''));
+const urls = [
+  ...NAV.map(n => SITE + (n.slug ? n.slug + '/' : '')),
+  ...EXTRA_PAGES.map(p => SITE + p),
+];
 writeFile('sitemap.xml',
   `<?xml version="1.0" encoding="UTF-8"?>\n` +
   `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n` +

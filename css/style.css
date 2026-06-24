@@ -2959,6 +2959,11 @@ body.large-text .tm-chip { font-size: 14px; }
   font-size: 21px;
   margin: 28px 0 10px;
 }
+.tool-seo h3 {
+  font-size: 17px;
+  font-weight: 600;
+  margin: 20px 0 6px;
+}
 .tool-seo p { margin: 0 0 14px; }
 .tool-seo ul,
 .tool-seo ol { margin: 0 0 14px; padding-left: 22px; }

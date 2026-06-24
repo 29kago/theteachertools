@@ -1,0 +1,357 @@
+/* ════════════════════════════════════════════════════════════════
+   THE TEACHER TOOLS — shared styles for content pages
+   (About, Contact, Privacy, Resources hub + articles, page footer)
+   Light theme only. Colours/fonts mirror the homepage tokens.
+   ════════════════════════════════════════════════════════════════ */
+
+:root {
+  --tt-bg: #fdf9ef;
+  --tt-ink: #212121;
+  --tt-body: #404752;
+  --tt-muted: #6b7280;
+  --tt-primary: #005ea4;
+  --tt-primary-dark: #004273;
+  --tt-card: #ffffff;
+  --tt-surface-low: #f7f3e9;
+  --tt-surface: #f1eee4;
+  --tt-border: #c0c7d4;
+  --tt-accent: #fdc003;
+  --tt-on-accent: #261a00;
+}
+
+/* Base/reset rules are scoped to .ttpage so this file can also be linked on
+   the tool pages purely for the shared footer without altering their layout. */
+.ttpage, .ttpage * { box-sizing: border-box; }
+.ttpage a { color: var(--tt-primary); }
+.ttpage a:hover { color: var(--tt-primary-dark); }
+.ttpage img { max-width: 100%; }
+
+body.ttpage {
+  margin: 0;
+  background: var(--tt-bg);
+  color: var(--tt-body);
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 17px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ─── Header / nav ─── */
+.tt-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(253, 249, 239, 0.92);
+  backdrop-filter: saturate(180%) blur(8px);
+  border-bottom: 1px solid var(--tt-border);
+}
+.tt-header-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 14px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.tt-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+.tt-brand img { width: 38px; height: 38px; object-fit: contain; border-radius: 9px; }
+.tt-brand span {
+  font-family: "Fraunces", Georgia, serif;
+  font-weight: 900;
+  font-style: italic;
+  font-size: 23px;
+  letter-spacing: -0.01em;
+  color: var(--tt-ink);
+  white-space: nowrap;
+}
+.tt-nav {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+}
+.tt-nav a { color: var(--tt-body); text-decoration: none; transition: color 0.15s ease; }
+.tt-nav a:hover { color: var(--tt-primary); }
+.tt-nav .tt-support {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--tt-accent);
+  color: var(--tt-on-accent);
+  padding: 8px 16px;
+  border-radius: 10px;
+  font-weight: 700;
+}
+.tt-nav .tt-support:hover { color: var(--tt-on-accent); filter: brightness(0.96); }
+@media (max-width: 640px) {
+  .tt-nav { gap: 16px; font-size: 14px; }
+  .tt-nav .tt-hide-sm { display: none; }
+  .tt-brand span { font-size: 19px; }
+}
+
+/* ─── Page shell ─── */
+.tt-main {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 40px 24px 24px;
+}
+.tt-main.tt-wide { max-width: 1080px; }
+
+.tt-breadcrumb {
+  font-size: 14px;
+  color: var(--tt-muted);
+  margin: 0 0 18px;
+}
+.tt-breadcrumb a { color: var(--tt-muted); text-decoration: none; }
+.tt-breadcrumb a:hover { color: var(--tt-primary); text-decoration: underline; }
+
+/* ─── Typography ─── */
+.tt-main h1 {
+  font-family: "Fraunces", Georgia, serif;
+  font-weight: 900;
+  font-size: clamp(32px, 5vw, 46px);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--tt-ink);
+  margin: 0 0 16px;
+}
+.tt-main h2 {
+  font-family: "Outfit", "Inter", sans-serif;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 1.25;
+  color: var(--tt-ink);
+  margin: 40px 0 12px;
+}
+.tt-main h3 {
+  font-family: "Outfit", "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  color: var(--tt-ink);
+  margin: 28px 0 8px;
+}
+.tt-main p { margin: 0 0 18px; }
+.tt-main ul, .tt-main ol { margin: 0 0 18px; padding-left: 24px; }
+.tt-main li { margin: 8px 0; }
+.tt-main strong { color: var(--tt-ink); }
+.tt-lead {
+  font-size: 20px;
+  line-height: 1.6;
+  color: var(--tt-body);
+  margin-bottom: 28px;
+}
+.tt-meta {
+  font-size: 14px;
+  color: var(--tt-muted);
+  margin: 0 0 28px;
+}
+.tt-main blockquote {
+  margin: 24px 0;
+  padding: 4px 0 4px 20px;
+  border-left: 4px solid var(--tt-accent);
+  color: var(--tt-ink);
+  font-style: italic;
+}
+.tt-main hr {
+  border: none;
+  border-top: 1px solid var(--tt-border);
+  margin: 40px 0;
+}
+
+/* ─── Callout box ─── */
+.tt-callout {
+  background: var(--tt-surface-low);
+  border: 1px solid var(--tt-border);
+  border-radius: 16px;
+  padding: 20px 24px;
+  margin: 28px 0;
+}
+.tt-callout h3 { margin-top: 0; }
+.tt-callout p:last-child { margin-bottom: 0; }
+
+/* ─── Cards (resources hub, related tools) ─── */
+.tt-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  margin: 28px 0;
+}
+.tt-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--tt-card);
+  border: 1px solid var(--tt-border);
+  border-radius: 18px;
+  padding: 24px;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
+}
+.tt-card:hover {
+  border-color: var(--tt-primary);
+  box-shadow: 0 10px 26px rgba(0, 94, 164, 0.10);
+  transform: translateY(-2px);
+}
+.tt-card .tt-kicker {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--tt-primary);
+  margin-bottom: 8px;
+}
+.tt-card h3 {
+  font-family: "Outfit", "Inter", sans-serif;
+  font-size: 19px;
+  font-weight: 700;
+  color: var(--tt-ink);
+  margin: 0 0 8px;
+}
+.tt-card p { font-size: 15px; color: var(--tt-body); margin: 0; }
+.tt-card .tt-readmore {
+  margin-top: 14px;
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--tt-primary);
+}
+
+/* ─── FAQ ─── */
+.tt-faq { margin: 24px 0; }
+.tt-faq details {
+  border: 1px solid var(--tt-border);
+  border-radius: 12px;
+  background: var(--tt-card);
+  margin-bottom: 12px;
+  overflow: hidden;
+}
+.tt-faq summary {
+  cursor: pointer;
+  list-style: none;
+  padding: 16px 20px;
+  font-family: "Outfit", "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 17px;
+  color: var(--tt-ink);
+  position: relative;
+}
+.tt-faq summary::-webkit-details-marker { display: none; }
+.tt-faq summary::after {
+  content: "+";
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 22px;
+  color: var(--tt-primary);
+  font-weight: 400;
+}
+.tt-faq details[open] summary::after { content: "\2212"; }
+.tt-faq details[open] summary { border-bottom: 1px solid var(--tt-border); }
+.tt-faq .tt-faq-body { padding: 14px 20px 18px; }
+.tt-faq .tt-faq-body p:last-child { margin-bottom: 0; }
+
+/* ─── Buttons ─── */
+.tt-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--tt-primary);
+  color: #fff;
+  text-decoration: none;
+  padding: 12px 24px;
+  border-radius: 12px;
+  font-family: "Outfit", "Inter", sans-serif;
+  font-weight: 700;
+  transition: filter 0.15s ease, transform 0.15s ease;
+}
+.tt-btn:hover { color: #fff; filter: brightness(1.08); transform: translateY(-1px); }
+.tt-btn-ghost {
+  background: transparent;
+  color: var(--tt-primary);
+  border: 1.5px solid var(--tt-border);
+}
+.tt-btn-ghost:hover { color: var(--tt-primary); border-color: var(--tt-primary); filter: none; }
+
+/* ─── Ad slot ─── */
+.tt-ad {
+  margin: 36px auto;
+  max-width: 728px;
+  min-height: 90px;
+  text-align: center;
+}
+.tt-ad-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--tt-muted);
+  margin-bottom: 6px;
+}
+
+/* ─── Footer ─── */
+.tt-footer {
+  background: var(--tt-surface-low);
+  border-top: 1px solid var(--tt-border);
+  padding: 56px 24px 32px;
+  margin-top: 72px;
+}
+.tt-footer-grid {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1fr;
+  gap: 40px;
+}
+@media (max-width: 800px) {
+  .tt-footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+}
+@media (max-width: 480px) {
+  .tt-footer-grid { grid-template-columns: 1fr; }
+}
+.tt-footer-brand img { width: 36px; height: 36px; object-fit: contain; border-radius: 9px; opacity: 0.85; }
+.tt-footer-brand .tt-fb-row { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.tt-footer-brand .tt-fb-row span {
+  font-family: "Fraunces", Georgia, serif;
+  font-weight: 900;
+  font-style: italic;
+  font-size: 19px;
+  color: var(--tt-ink);
+  opacity: 0.85;
+}
+.tt-footer-brand p { font-size: 15px; color: var(--tt-body); margin: 14px 0 0; max-width: 320px; }
+.tt-footer h4 {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--tt-ink);
+  opacity: 0.6;
+  margin: 0 0 16px;
+  font-family: "Inter", sans-serif;
+}
+.tt-footer ul { list-style: none; margin: 0; padding: 0; }
+.tt-footer li { margin: 10px 0; }
+.tt-footer a { color: var(--tt-body); text-decoration: none; font-weight: 500; font-size: 15px; }
+.tt-footer a:hover { color: var(--tt-primary); }
+.tt-footer-bottom {
+  max-width: 1100px;
+  margin: 40px auto 0;
+  padding-top: 24px;
+  border-top: 1px solid var(--tt-border);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 16px;
+  font-size: 14px;
+  color: var(--tt-muted);
+}
+.tt-footer-bottom a { color: var(--tt-muted); text-decoration: none; }
+.tt-footer-bottom a:hover { color: var(--tt-primary); }
+.tt-footer-bottom .tt-fb-links { display: flex; gap: 24px; }

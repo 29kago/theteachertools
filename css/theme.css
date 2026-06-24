@@ -73,6 +73,7 @@ body.large-text .tab-label { font-size: 18px; }
 /* ─── SEO section under each tool ─── */
 .tool-seo h1,
 .tool-seo h2,
+.tool-seo h3,
 .seo-card h2 {
   font-family: 'Outfit', 'Inter', sans-serif;
   letter-spacing: -0.01em;
@@ -332,3 +333,20 @@ body:not(.dark) .pf-cls-names:focus {
   box-shadow: 0 0 0 3px var(--tt-ring);
 }
 body:not(.dark) .pf-note strong { color: var(--tt-blue); }
+
+/* ═══════════ SHARED FOOTER + IN-CONTENT AD — dark mode ═══════════
+   The footer (css/pages.css) is light by default; on the tool pages'
+   dark theme, recolour it to the navy palette so it stays cohesive. */
+body.dark .tt-footer {
+  background: #0b1220;
+  border-top-color: rgba(255, 255, 255, 0.08);
+}
+body.dark .tt-footer-bottom { border-top-color: rgba(255, 255, 255, 0.08); }
+body.dark .tt-footer-brand .tt-fb-row span,
+body.dark .tt-footer h4 { color: #d8e8f8; }
+body.dark .tt-footer-brand p,
+body.dark .tt-footer a { color: #b8cde8; }
+body.dark .tt-footer a:hover { color: #6fa8e0; }
+body.dark .tt-footer-bottom,
+body.dark .tt-footer-bottom a { color: #6b86a8; }
+body.dark .tt-ad-label { color: #486080; }
