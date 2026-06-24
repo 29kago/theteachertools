@@ -618,19 +618,6 @@ const HOME_PANEL = `    <div class="panel active" id="panel-home" role="tabpanel
               <div class="search-dropdown" id="welcomeSearchDropdown" aria-live="polite"></div>
             </div>
           </div>
-
-          <!-- Main Ad -->
-          <div class="home-ad">
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-client="ca-pub-6623585309429140"
-                 data-ad-slot="2577114334"
-                 data-ad-format="auto"
-                 data-full-width-responsive="true"></ins>
-            <script>
-              (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
-          </div>
         </div>
       </div>
     </div>`;
@@ -707,11 +694,6 @@ ${cards}
   return `  <section class="tool-seo">
     <h1>${page.seo.h1}</h1>
 ${page.seo.body.trim().split('\n').map(l => '    ' + l.trim()).join('\n')}
-    <div class="tt-ad">
-      <div class="tt-ad-label">Advertisement</div>
-      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6623585309429140" data-ad-slot="2577114334" data-ad-format="auto" data-full-width-responsive="true"></ins>
-      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-    </div>
     <p><a href="../">← Back to all Teacher Tools</a></p>
   </section>`;
 }
